@@ -1,0 +1,360 @@
+<div class="row">
+	<div class="col-lg-4 ">
+		<ul class="breadcrumb">
+			<li><i class="fa fa-home"></i><a href="#">主页</a></li>
+			<li class="active">在线分析</li>
+		</ul>
+	</div>
+</div>
+<div class="main-header">
+	<h2>在线分析</h2>
+	<em>空白页的一个示例</em>
+</div>
+<div class="main-content">
+	<div class="widget">
+		<div class="widget-content">
+			<div class="row more-seach">
+				<div class="col-xs-4">
+					<div class="input-group btn-group datesel" style="max-width: 250px;">
+						<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						<button type="button" class="btn btn-default btn-md" 
+						style="width: 100%;"><span></span>
+						</button>
+						<ul class="dropdown-menu" style="width: 100%;">
+							<li style="text-align: center;">
+								<span class="badge" data-tr="0">今日</span>
+								<span class="badge" data-tr="1">昨日</span>
+								<span class="badge" data-tr="7">近7日</span>
+								<span class="badge" data-tr="30">近30日</span>
+								<span class="badge" data-tr="90">全部</span>
+							</li>
+							<li>
+								<div class="form-group">
+									<span class="input-icon icon-right">
+				                        <input type="text" class="form-control" readonly placeholder="筛选日期">
+				                        <i class="fa fa-calendar"></i>
+				                    </span>
+				            	</div>
+							</li>
+							<li style="text-align:right">
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>取消</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-8 text-right">
+					<div class="btn-group multi-c">
+						<button type="button" class="btn btn-default btn-md ck"><i class="fa fa-glass"></i> 筛选</button>
+						<button type="button" class="btn btn-default btn-md ck" style="margin-left:0"><span class="caret"></span></button>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<div class="title">
+								 	<label>渠道：
+								 		<input type="checkbox" class="ckcheked" data-size="mini">
+								 	</label>
+								 	<label>不筛选</label>
+								</div>
+
+								<div class="multi-content">
+									<select id="multiselect6" multiple="multiple" style="width:100%">
+										<optgroup label="大中华">
+											<option value="analysis">渠道5-</option>
+											<option value="algebra">渠道1*s</option>
+											<option value="discrete">渠道1-899</option>
+											<option value="numerical">渠道231 </option>
+											<option value="probability">渠道1322</option>
+										</optgroup>
+									</select>
+								</div>
+							</li>
+							<li>
+								<div class="title">
+								 	<label>区服：
+								 		<input type="checkbox" class="ckcheked" data-size="mini">
+								 	</label>
+								 	<label>不筛选</label>
+								</div>
+
+								<div class="multi-content">
+									<select id="multiselect7" multiple="multiple" style="width:100%">
+										<optgroup label="华南二区">
+											<option value="analysis">二区-</option>
+											<option value="algebra">二区*s</option>
+											<option value="discrete">二区-899</option>
+											<option value="numerical">二区 </option>
+											<option value="probability">二区</option>
+										</optgroup>
+									</select>
+								</div>
+							</li>
+							<li style="text-align:right;border:0;">
+								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
+								<button type="button" class="btn btn-default btn-sm cancel"><i class="fa fa-edit"></i>取消</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"></i> 在线玩家</h3>
+		</div>
+		<div class="widget-content">
+			<div id="c1"></div>
+		</div>
+	</div>
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"></i> 最近玩家</h3>
+		</div>
+		<div class="widget-content flip-scroll">
+			<table class="table table-bordered table-striped table-condensed flip-content">
+				<thead class="flip-content bordered-palegreen">
+					<tr><th></th><th>时间</th><th>用户名</th></tr>
+				</thead>
+				<tbody>
+					<tr><td><i class="fa fa-plus-square-o row-details" data-r='ct-001'></i></td><td>2016-08-01 16:46:30</td><td>Jobs</td></tr>
+					<tr style="display:none" id='ct-001'>
+						<td  colspan="6" class="flip-scroll">			
+							<table class="table table-bordered table-striped table-condensed flip-content">
+								<thead class="flip-content bordered-palegreen">
+				                <tr>
+				                    <th>
+				                        机型:iPhone 6
+				                    </th>
+				                    <th>
+				                        操作系统:iOS7.0.6
+				                    </th>
+				                    <th>
+				                        分辨率:640*960
+				                    </th>
+				                    <th>
+				                        使用语言:zh
+				                    </th>
+				                </tr>
+				                </thead>
+				                <tbody>
+				                <tr>
+				                    <td>
+				                        2016-08-01 17:46:11	
+				                    </td>
+				                    <td colspan="3">
+				                        玩家进入了游戏。
+				                    </td>
+				                </tr>
+				                <tr>
+				                    <td>
+				                        2016-08-01 17:46:21	
+				                    </td>
+				                    <td colspan="3">
+				                        玩家接受了 关卡01 任务
+				                    </td>
+				                </tr>
+				                <tr>
+				                    <td>
+				                        2016-08-01 17:48:06	
+				                    </td>
+				                    <td colspan="3">
+				                        玩家退出了游戏。
+				                    </td>
+				                </tr>
+				                </tbody>
+				            </table>
+						</td>
+					</tr>
+					<tr><td><i class="fa fa-plus-square-o row-details"></i></td><td>2016-08-01 16:46:30</td><td>Philips</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"> 每日在线用户</i></h3>
+		</div>
+		<div class="widget-content">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#T1" data-toggle="tab"><i class="fa fa-list"></i> ACU</a></li>
+				<li><a href="#T2" data-toggle="tab"><i class="fa fa-list"></i> PCU</a></li>
+				<li><a href="#T3" data-toggle="tab"><i class="fa fa-list"></i> ACU/PUC</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="T1">
+					<div id="c_1"></div>
+				</div>
+				<div class="tab-pane fade " id="T2">
+					<div id="c_2"></div>
+				</div>
+				<div class="tab-pane fade" id="T3">
+					<div id="c_3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="widget">
+				<div class="widget-header">
+					<h3><i class="glyphicon glyphicon-th-list"> ACU</i></h3>
+				</div>
+				<div class="widget-content">
+					<table class="table table-hover">
+						<tr><td>MAX</td><td style="text-align: center">382|2014-08-25</td></tr>
+						<tr><td>AVG</td><td style="text-align: center">340</td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="widget">
+				<div class="widget-header">
+					<h3><i class="glyphicon glyphicon-th-list"> PCU</i></h3>
+				</div>
+				<div class="widget-content">
+					<table class="table table-hover">
+						<tr><td>MAX</td><td style="text-align: center">382|2014-08-25</td></tr>
+						<tr><td>AVG</td><td style="text-align: center">340</td></tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function () {
+	$('.multi-c').multi_c();
+
+	$('.ckcheked').bootstrapSwitch();
+
+	$('#multiselect6,#multiselect7').select2();
+
+	$('.row-details').click(function(){
+		var delTable=$(this).data('r');
+		if($('#'+delTable).is(':hidden')){
+			$('#'+delTable).show();
+			$(this).removeClass('fa-plus-square-o').addClass('fa-minus-square-o');
+		}else{
+			$('#'+delTable).hide();
+			$(this).removeClass('.fa-minus-square-o').addClass('fa-plus-square-o')
+		}
+	})
+	$('.datesel').selDate({
+		e_click:function(item){}
+	});
+
+    $('#c1').highcharts({
+        chart: {
+        	height: 250,
+        	backgroundColor: '#f9f9f9',
+            type: 'line'
+        },
+        title: {
+            text: '今日&昨日'
+        },
+	    exporting: {
+	        url: 'http://export.hcharts.cn/'
+	    },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['00:00', '02:00', '04:00', '06:00', '08:00', '09:00', '10:00', '12:00', '14:00', '16:00', '20:00', '22:00']
+        },
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        series: [{
+            name: '今日',
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 1000, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '昨日',
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 1000]
+        }]
+    });
+    $('#c_1').highcharts({
+        chart: {
+        	backgroundColor: '#f9f9f9',
+            type: 'area'
+        },
+	    exporting: {
+	        url: 'http://export.hcharts.cn/'
+	    },
+        title: {
+            text: '',
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+    		categories: ['8月1', '8月2', '8月3', '8月4', '8月5', '8月6', '8月7']
+		},		        
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            shared: true
+        },
+        series: [
+        {
+            name: 'ACU',
+            data: [6 , 11, 32, 110, 235, 369, 640]
+        }]
+    });
+	$('#c_2').highcharts({
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            crosshair: true
+        }],
+        yAxis: [{
+            labels: {
+                format: '{value}%',
+            },
+            title: {
+                text: '',
+            },
+            opposite: true
+
+        }, {
+        	labels: {
+                format: '{value} '
+            },
+            title: {
+                text: '',
+            }
+        }],
+        series: [{
+            name: 'Rainfall',
+            type: 'column',
+            yAxis: 1,
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            tooltip: {
+                valueSuffix: ' '
+            }
+
+        }, {
+            name: 'Temperature',
+            type: 'spline',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+            tooltip: {
+                valueSuffix: ' %'
+            }
+        }]
+    });
+});
+</script>

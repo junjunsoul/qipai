@@ -1,0 +1,150 @@
+.row-details{
+    cursor: pointer;
+}
+.flip-scroll table {
+    width: 100%
+}
+
+@media only screen and (max-width: 800px) {
+    .flip-scroll .flip-content:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0
+    }
+
+    .flip-scroll html .flip-content {
+        -ms-zoom: 1;
+        zoom: 1
+    }
+
+    .flip-scroll *:first-child + html .flip-content {
+        -ms-zoom: 1;
+        zoom: 1
+    }
+
+    .flip-scroll table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        position: relative
+    }
+
+    .flip-scroll th, .flip-scroll td {
+        margin: 0;
+        vertical-align: top
+    }
+
+    .flip-scroll th:last-child, .flip-scroll td:last-child {
+        border-bottom: 1px solid #ddd
+    }
+
+    .flip-scroll th {
+        border: 0 !important;
+        border-right: 1px solid #ddd !important;
+        font-size: 13px !important;
+        padding: 5px;
+        width: auto !important;
+        display: block;
+        text-align: right;
+        border-bottom: 0;
+        border-left: 0
+    }
+
+    .flip-scroll td {
+        display: block;
+        min-height: 1.25em;
+        text-align: left;
+        border-top: 0 !important;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0
+    }
+
+    .flip-scroll thead {
+        display: block;
+        float: left
+    }
+
+    .flip-scroll thead tr {
+        display: block;
+        border: !important
+    }
+
+    .flip-scroll thead.bordered-blue > tr > th {
+        border-right: 3px solid #5db2ff !important
+    }
+
+    .flip-scroll thead.bordered-primary > tr > th {
+        border-right: 3px solid #4374e0 !important
+    }
+
+    .flip-scroll thead.bordered-danger > tr > th {
+        border-right: 3px solid #d73d32 !important
+    }
+
+    .flip-scroll thead.bordered-success > tr > th {
+        border-right: 3px solid #53a93f !important
+    }
+
+    .flip-scroll thead.bordered-warning > tr > th {
+        border-right: 3px solid #f4b400 !important
+    }
+
+    .flip-scroll thead.bordered-silver > tr > th {
+        border-right: 3px solid #777 !important
+    }
+
+    .flip-scroll thead.bordered-inverse > tr > th {
+        border-right: 3px solid #444 !important
+    }
+
+    .flip-scroll thead.bordered-blueberry > tr > th {
+        border-right: 3px solid #6f85bf !important
+    }
+
+    .flip-scroll thead.bordered-palegreen > tr > th {
+        border-right: 3px solid rgba(101, 110, 119, 0.43) !important
+    }
+
+    .flip-scroll thead.bordered-orange > tr > th {
+        border-right: 3px solid #fb6e52 !important
+    }
+
+    .flip-scroll thead.bordered-darkorange > tr > th {
+        border-right: 3px solid #ed4e2a !important
+    }
+
+    .flip-scroll thead.bordered-magenta > tr > th {
+        border-right: 3px solid #bc5679 !important
+    }
+
+    .flip-scroll thead.bordered-purple > tr > th {
+        border-right: 3px solid #7e3794 !important
+    }
+
+    .flip-scroll thead.bordered-maroon > tr > th {
+        border-right: 3px solid #981b48 !important
+    }
+
+    .flip-scroll tbody {
+        display: block;
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        white-space: nowrap
+    }
+
+    .flip-scroll tbody tr {
+        display: inline-block;
+        vertical-align: top;
+        border-left: 1px solid #ddd
+    }
+}
+
+.table-toolbar {
+    padding: 10px 0
+}

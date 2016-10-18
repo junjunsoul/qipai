@@ -1,0 +1,114 @@
+/*------------------------------------------------*/
+/*	Skin: Full Dark
+/*------------------------------------------------*/
+/* general */
+body {
+  background: white;
+}
+
+a {
+  color: #7b7b7b;
+}
+a:hover, a:focus {
+  color: #555555;
+}
+
+/* top bar */
+.top-bar {
+  background-color: white;
+  border-bottom: 1px solid #f2f2f2;
+}
+.top-bar .top-bar-right .btn-link {
+  color: #7b7b7b;
+}
+.top-bar .top-bar-right .btn-link:hover {
+  color: #555555;
+}
+.top-bar .notifications .count {
+  border-color: white;
+}
+.top-bar .notifications .notification-item .btn-group > a {
+  color: #7b7b7b;
+}
+.top-bar .notifications .notification-item .btn-group > a:hover, .top-bar .notifications .notification-item .btn-group > a:focus {
+  color: #555555;
+}
+.top-bar .searchbox input[type="search"] {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  color: #cccccc;
+}
+.top-bar .searchbox .btn {
+  background-color: #d9d9d9;
+  border-color: #e6e6e6;
+}
+.top-bar .searchbox .btn .fa {
+  color: #f2f2f2;
+}
+.top-bar .searchbox .btn:hover {
+  border-color: #d9d9d9;
+}
+.top-bar .searchbox .btn:hover .fa {
+  color: #e6e6e6;
+}
+
+.bottom {
+  border-bottom: 1px solid #e6e6e6;
+}
+.bottom .container .content-wrapper {
+  background-color: #fff;
+}
+
+/* navigation */
+ul.main-menu > li a {
+  background-color: white;
+  border-top: 1px solid white;
+  color: #7b7b7b;
+}
+ul.main-menu > li a:hover {
+  background-color: #fafafa;
+}
+ul.main-menu > li.active > a {
+  background-color: #f2f2f2;
+}
+
+.left-sidebar.minified .main-menu > li:hover > a > .text {
+  background: #f2f2f2;
+  border: 1px solid white;
+}
+.left-sidebar.minified .main-menu > li:hover ul.sub-menu {
+  border: 1px solid #f7f7f7;
+}
+
+/* sidebar */
+.sidebar-content .panel.panel-default {
+  border-color: #e6e6e6;
+  background-color: #fafafa;
+  color: #555555;
+}
+.sidebar-content .panel.panel-default > .panel-heading {
+  background-color: #f2f2f2;
+  border-color: #e6e6e6;
+}
+.sidebar-content h5.label-default {
+  background-color: #f2f2f2;
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+  color: inherit;
+}
+.sidebar-content .list-info-sidebar {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  color: #fff;
+}
+.sidebar-content .list-info-sidebar .data-name {
+  color: #cccccc;
+}
+.sidebar-content .list-info-sidebar .data-value {
+  color: #555555;
+}
+
+.footer {
+  background-color: white;
+  color: #555555;
+}

@@ -1,0 +1,82 @@
+/*------------------------------------------------*/
+/*	Skin: Teal
+/*------------------------------------------------*/
+/* general */
+a {
+  color: #18707a;
+}
+a:hover, a:focus {
+  color: #12555c;
+}
+
+.top-bar {
+  background-color: #084951;
+}
+.top-bar .top-bar-right .btn-link {
+  color: #3ad8eb;
+}
+.top-bar .top-bar-right .btn-link:hover {
+  color: #fff;
+}
+.top-bar .notifications .count {
+  border-color: #084951;
+}
+.top-bar .searchbox input[type="search"] {
+  background-color: #04282c;
+  border-color: #04282c;
+}
+.top-bar .searchbox .btn {
+  background-color: #0a5e68;
+  border-color: #04282c;
+}
+.top-bar .searchbox .btn .fa {
+  color: #04282c;
+}
+.top-bar .searchbox .btn:hover {
+  border-color: #010a0b;
+}
+.top-bar .searchbox .btn:hover .fa {
+  color: black;
+}
+
+/* widget */
+.widget {
+  border-color: #0f8897;
+}
+.widget .widget-header {
+  background-color: #084951;
+  border-bottom-color: #06343a;
+  color: #fff;
+}
+.widget .widget-header em {
+  color: #fff;
+}
+.widget .widget-header .btn-help {
+  color: #119dae;
+}
+.widget .widget-header .widget-header-toolbar {
+  border-left-color: #073c43;
+}
+.widget .widget-header .widget-header-toolbar .control-title {
+  color: #fff;
+}
+.widget .widget-header .btn-group > a {
+  color: #fff;
+}
+.widget .widget-header .btn-group > a:hover, .widget .widget-header .btn-group > a:focus {
+  color: #d6fbff;
+}
+
+/* main content */
+.main-header h2 {
+  color: #084951;
+  border-right-color: #0f8897;
+}
+.main-header em {
+  color: #0d737f;
+}
+
+/* footer */
+.footer {
+  background-color: #084951;
+}

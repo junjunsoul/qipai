@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>空白页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="">
+	<meta name="author" content="The Develovers">
+
+	<!-- CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+	<link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/main.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.css"/>
+
+	<!-- 主题选择 -->
+	<link href="style-switcher/assets/css/style-switcher.css" rel="stylesheet" type="text/css">
+
+	<link href="assets/js/mobiscroll/css/mobiscroll.css" rel="stylesheet" type="text/css">
+
+	<!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+
+</head>
+<body>
+	<!-- WRAPPER -->
+	<div class="wrapper">
+		<!-- TOP BAR -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<!-- logo -->
+					<div class="col-md-2 logo">
+						<a href="index.html"><img src="assets/img/kingadmin-logo-white.png" alt="KingAdmin - Admin Dashboard" /></a>
+					</div>
+					<!-- end logo -->
+					<div class="col-md-10">
+						<div class="row">
+							<div class="col-md-3">
+							</div>
+							<div class="col-md-9">
+								<div class="top-bar-right">
+									<!-- responsive menu bar icon -->
+									<a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i></a>
+									<!-- end responsive menu bar icon -->
+									<div class="notifications">
+										<ul>
+											<!-- notification: general -->
+											<li class="notification-item general">
+												<div class="btn-group">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+														<i class="fa fa-bell"></i><span class="count">3</span>
+														<span class="circle"></span>
+													</a>
+													<ul class="dropdown-menu" role="menu">
+														<li class="notification-header">
+															<em>您有3条未读信息</em>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-comment green-font"></i>
+																<span class="text">新评论的博客文章</span>
+																<span class="timestamp">1分钟前</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-user green-font"></i>
+																<span class="text">新注册用户</span>
+																<span class="timestamp">12分钟前</span>
+															</a>
+														</li>
+														<li>
+															<a href="#">
+																<i class="fa fa-comment green-font"></i>
+																<span class="text">新评论的博客文章</span>
+																<span class="timestamp">18分钟前</span>
+															</a>
+														</li>
+														<li class="notification-footer">
+															<a href="#">查看所有通知</a>
+														</li>
+													</ul>
+												</div>
+											</li>
+											<!-- end notification: general -->
+										</ul>
+									</div>
+
+									<!-- logged user and the menu -->
+									<div class="logged-user">
+										<div class="btn-group">
+											<a href="#" class="btn btn-link dropdown-toggle"  style="line-height: 24px;" data-toggle="dropdown">
+												<span class="name">喜利宝</span> <span class="caret"></span>
+											</a>
+											<ul class="dropdown-menu" role="menu">
+												<li>
+													<a href="#">
+														<i class="fa fa-user"></i>
+														<span class="text">个人信息</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-cog"></i>
+														<span class="text">设置</span>
+													</a>
+												</li>
+												<li>
+													<a href="page-login.html">
+														<i class="fa fa-power-off"></i>
+														<span class="text">登出</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- end logged user and the menu -->
+								</div><!-- /top-bar-right -->
+							</div>
+						</div><!-- /row -->
+					</div>
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div><!-- /top -->
+		
+		<!-- BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+		<div class="bottom">
+			<div class="container">
+				<div class="row">
+					<!-- left sidebar -->
+					<div class="col-md-2 left-sidebar">
+						<!-- main-nav -->
+						<nav class="main-nav">
+							<ul class="main-menu">
+								<li class="active"><a href="#main" data-url='main'><i class="fa fa-dashboard fa-fw"></i><span class="text">首页</span></a></li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle"><i class="fa fa-user fa-fw"></i><span class="text">游戏玩家</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu open">
+										<li ><a href="#game-user" data-url='game-user'><span class="text">新增玩家</span></a></li>
+										<li ><a href="#"><span class="text">活跃玩家</span></a></li>
+										<li ><a href="#"><span class="text">玩家留存</span></a></li>
+										<li ><a href="#"><span class="text">付费转换</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#onlinefx" data-url='onlinefx'><i class="glyphicon glyphicon-dashboard fa-fw"></i><span class="text">在线分析</span></a>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle"><i class="glyphicon glyphicon-star-empty fa-fw"></i><span class="text">等级分析</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu">
+										<li ><a href="#gradexj" data-url='gradexj'><span class="text">等级详解</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle"><i class="glyphicon glyphicon-fire fa-fw"></i><span class="text">任务分析</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu">
+										<li ><a href="#taskgk" data-url='taskgk'><span class="text">任务和关卡</span></a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="js-sub-menu-toggle"><i class="glyphicon glyphicon-usd fa-fw"></i><span class="text">收入分析</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu">
+										<li ><a href="#incomesd" data-url='incomesd'><span class="text">收入数据</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav><!-- /main-nav -->
+
+						<div class="sidebar-minified js-toggle-minified">
+							<i class="fa fa-angle-left"></i>
+						</div>
+
+						<!-- sidebar content -->
+						<div class="sidebar-content">
+							<div class="panel panel-default">
+								<div class="panel-heading"><h5><i class="fa fa-lightbulb-o"></i> 提示</h5></div>
+								<div class="panel-body">
+									<p>你可以做live搜索在搜索框小部件位于窗口的顶部。它非常有用,如果你的仪表盘的小部件.</p>
+								</div>
+							</div>
+							
+							<h5 class="label label-default"><i class="fa fa-info-circle"></i>系统信息</h5>
+							<ul class="list-unstyled list-info-sidebar bottom-30px">
+								<li class="data-row">
+									<span class="data-name">磁盘空间</span>
+									<span class="data-value">
+										274.43 / 2 GB
+										<div class="progress progress-xs">
+											<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+												<span class="sr-only">10%</span>
+											</div>
+										</div>
+									</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">每月带宽</span>
+									<span class="data-value">
+										230 / 500 GB
+										<div class="progress progress-xs">
+											<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="46" aria-valuemin="0" aria-valuemax="100" style="width: 46%">
+												<span class="sr-only">46%</span>
+											</div>
+										</div>
+									</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">数据库磁盘空间</span>
+									<span class="data-value">219.45 MB</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">操作系统</span>
+									<span class="data-value">Linux</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">Apache Version</span>
+									<span class="data-value">2.4.6</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">PHP Version</span>
+									<span class="data-value">5.3.27</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">MySQL Version</span>
+									<span class="data-value">5.5.34-cll</span>
+								</li>
+								<li class="data-row">
+									<span class="data-name">Architecture</span>
+									<span class="data-value">x86_64</span>
+								</li>
+							</ul>
+						</div>
+						<!-- end sidebar content -->
+					</div>
+					<!-- end left sidebar -->
+
+					<!-- content-wrapper -->
+					<div class="col-md-10 content-wrapper">
+						<!-- main -->
+						<div id="main-content" class="content">
+
+						</div><!-- /main -->
+					</div><!-- /content-wrapper -->
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div>
+		<!-- END BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+		<div class="push-sticky-footer"></div>
+	</div><!-- /wrapper -->
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		&copy; 2016 开发版
+	</footer>
+	<!-- END FOOTER -->
+
+	<!-- STYLE SWITCHER -->
+	<div class="del-style-switcher">
+		<div class="del-switcher-toggle toggle-hide"></div>
+		<form>
+			<section class="del-section del-section-skin">
+				<h5 class="del-switcher-header">选择主题:</h5>
+				<ul>
+					<li><a href="#" title="Slate Gray" class="switch-skin slategray" data-skin="assets/css/skins/slategray.css">Slate Gray</a></li>
+					<li><a href="#" title="Dark Blue" class="switch-skin darkblue" data-skin="assets/css/skins/darkblue.css">Dark Blue</a></li>
+					<li><a href="#" title="Dark Brown" class="switch-skin darkbrown" data-skin="assets/css/skins/darkbrown.css">Dark Brown</a></li>
+					<li><a href="#" title="Light Green" class="switch-skin lightgreen" data-skin="assets/css/skins/lightgreen.css">Light Green</a></li>
+					<li><a href="#" title="Orange" class="switch-skin orange" data-skin="assets/css/skins/orange.css">Orange</a></li>
+					<li><a href="#" title="Red" class="switch-skin red" data-skin="assets/css/skins/red.css">Red</a></li>
+					<li><a href="#" title="Teal" class="switch-skin teal" data-skin="assets/css/skins/teal.css">Teal</a></li>
+					<li><a href="#" title="Yellow" class="switch-skin yellow" data-skin="assets/css/skins/yellow.css">Yellow</a></li>
+				</ul>
+			</section>
+			
+			<p><a href="#" title="Reset Style" class="del-reset-style">重置主题</a></p>
+		</form>
+	</div>
+	<!-- END STYLE SWITCHER -->
+
+	<!-- Javascript -->
+	<script src="assets/js/jquery-2.1.0.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/modernizr.js"></script><!-- 兼容css3,html5 -->
+	<script src="assets/js/common.js"></script>
+
+	<script src="style-switcher/assets/js/deliswitch.js"></script><!-- 主题切换 -->
+
+	<script src="assets/js/highChart/highcharts.js"></script>
+	<script src="assets/js/echart/echarts.js"></script>
+
+	<script src="assets/js/echart/theme/walden.js"></script>
+
+	<script src="assets/js/jquery.ba-hashchange.min.js"></script><!-- hash值改变事件 -->
+	<script src="assets/js/mobiscroll/js/mobiscroll.js"></script>
+
+	<script type="text/javascript" src="assets/js/datatable/jquery.dataTables.js"></script>
+	<script src="assets/js/select2.js"></script>
+	<script src="assets/js/bootstrap-switch.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$.scParameter={
+				theme: 'bootstrap',//mobiscroll
+		        lang: 'zh',
+		        display:$(window).width()<=700?'bottom':'bubble',
+		        mode:'scroller',
+		        datatable_lang:{
+                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+                    "sZeroRecords": "抱歉， 没有找到",
+                    "sInfo": "_START_ 到 _END_ /共 _TOTAL_ 条数据",
+                    "sInfoEmpty": "没有数据",
+                    "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                    "sZeroRecords": "没有检索到数据",
+                    "sSearch": "",
+                    "oPaginate": {
+                        "sFirst": "首页",
+                        "sPrevious": "上一页",
+                        "sNext": "下一页",
+                        "sLast": "尾页"
+                    },
+                    "buttons": {
+			            pageLength: {
+			                _: "显示 %d 项",
+			                "-1": "显示所有"
+			            }
+			        }
+                }
+			}
+			var url=window.location.hash;
+ 			$(window).hashchange(function() {
+                url=window.location.hash;
+	        	if(url){
+	        		url=url.split('#')[1];
+		      		$("#main-content").load('page/'+url+'.html',{},function(){
+		      			$.fn.initPage();
+				      	var w=$(window).width();
+				      	if(w<=979){
+				      		$('.left-sidebar').slideUp(300);
+				      	}
+		      		});
+	      		}
+            });
+	        if(url)
+	        	url=url.split('#')[1];
+	        else
+	        	url='main';
+
+	        $("#main-content").load('page/'+url+'.html',{},function(){
+		      	$.fn.initPage();
+		    });
+		});
+	</script>
+</body>
+</html>

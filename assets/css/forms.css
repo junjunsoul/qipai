@@ -1,0 +1,142 @@
+/*------------------------------------------------*/
+/*	Forms
+/*------------------------------------------------*/
+/* form */
+fieldset {
+  margin-bottom: 40px;
+}
+
+legend {
+  color: #555555;
+  font-size: 1.5em;
+}
+
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+.form-horizontal ul.multiselect-container .radio, .form-horizontal ul.multiselect-container .checkbox {
+  min-height: initial;
+  padding-top: 0;
+}
+
+div[class*="col-"] > .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.form-control,
+.input-group .form-control {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+/* erorr list */
+.parsley-error-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+.parsley-error-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+}
+.parsley-error-list li {
+  color: #db3833;
+  font-size: 0.9em;
+  margin-top: 3px;
+}
+@media (min-width: 487px){
+  .more-seach>.col-xs-4,.more-seach>.col-xs-8{
+    width: 50%;
+  }
+}
+@media (max-width: 487px){
+  .more-seach>.col-xs-4,.more-seach>.col-xs-8{
+    display: block;
+    float: none;
+    width: 100%;
+    margin-top: 5px;
+  }
+  .more-seach>.col-xs-4>.btn-group{
+    max-width: 100% !important;
+  }  
+  .more-seach>.col-xs-8>.btn-group{
+    width: 100%;
+    text-align: center;
+  }
+  .more-seach>.col-xs-8>.btn-group>button.ck:first-child{
+    width: 90%;
+    text-align: left;
+  }
+  .more-seach>.col-xs-8>.btn-group>button.ck{
+    width: 10%;
+  }
+  .more-seach>.col-xs-8 .dropdown-menu{
+    left: 0 !important;
+  }
+  .multi-c>ul{
+    width: auto !important;
+  }
+}
+.more-seach>.col-xs-8 .dropdown-menu{
+  right:0;
+  left: -342px;
+}
+.multi-c>ul{
+  width: 450px;
+}
+.multi-c>ul>li{
+  margin:5px;
+  padding: 2px;
+  box-sizing: border-box;
+  border:1px solid #dddddd;
+  text-align: left;
+}
+.multi-c>ul>li .title{
+  padding:5px;
+}
+.multi-c>ul>li .title>label:last-child{
+  float: right;
+}
+.multi-c>ul>li .multi-content{
+  padding:5px;
+  border-top: 1px dashed #dddddd;
+  display: none;
+}

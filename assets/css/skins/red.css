@@ -1,0 +1,82 @@
+/*------------------------------------------------*/
+/*	Skin: Red
+/*------------------------------------------------*/
+/* general */
+a {
+  color: #f73838;
+}
+a:hover, a:focus {
+  color: #e80909;
+}
+
+.top-bar {
+  background-color: #ab1d1d;
+}
+.top-bar .top-bar-right .btn-link {
+  color: #f0a4a4;
+}
+.top-bar .top-bar-right .btn-link:hover {
+  color: #fff;
+}
+.top-bar .notifications .count {
+  border-color: #ab1d1d;
+}
+.top-bar .searchbox input[type="search"] {
+  background-color: #6a1212;
+  border-color: #6a1212;
+}
+.top-bar .searchbox .btn {
+  background-color: #c12121;
+  border-color: #6a1212;
+}
+.top-bar .searchbox .btn .fa {
+  color: #6a1212;
+}
+.top-bar .searchbox .btn:hover {
+  border-color: #6a1212;
+}
+.top-bar .searchbox .btn:hover .fa {
+  color: #540e0e;
+}
+
+/* widget */
+.widget {
+  border-color: #dd3737;
+}
+.widget .widget-header {
+  background-color: #ab1d1d;
+  border-bottom-color: #951919;
+  color: #fff;
+}
+.widget .widget-header em {
+  color: #fff;
+}
+.widget .widget-header .btn-help {
+  color: #e14d4d;
+}
+.widget .widget-header .widget-header-toolbar {
+  border-left-color: #9e1b1b;
+}
+.widget .widget-header .widget-header-toolbar .control-title {
+  color: #fff;
+}
+.widget .widget-header .btn-group > a {
+  color: #fff;
+}
+.widget .widget-header .btn-group > a:hover, .widget .widget-header .btn-group > a:focus {
+  color: #ffc3c3;
+}
+
+/* main content */
+.main-header h2 {
+  color: #881717;
+  border-right-color: #dd3737;
+}
+.main-header em {
+  color: #b81f1f;
+}
+
+/* footer */
+.footer {
+  background-color: #ab1d1d;
+}

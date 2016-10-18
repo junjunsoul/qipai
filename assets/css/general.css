@@ -1,0 +1,218 @@
+/*------------------------------------------------*/
+/*	General Styles
+/*------------------------------------------------*/
+html,
+body {
+  height: 100%;
+  font-family: arial,'Microsoft YaHei','\5FAE\8F6F\96C5\9ED1',"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background: #ececec;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h2 {
+  font-family: "latolight";
+}
+
+h3, h4, h5, h6 {
+  font-family: arial,'Microsoft YaHei','\5FAE\8F6F\96C5\9ED1',"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+hr {
+  border-top-color: #dddddd;
+}
+hr.inner-separator {
+  border-style: dashed;
+}
+
+label {
+  font-weight: 300;
+}
+
+blockquote {
+  border-color: #e4e4e4;
+}
+
+input {
+  border-radius: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@font-face {
+  font-family: "latolight";
+  src: url('../fonts/lato-lig-webfont.eot');
+  src: url('../fonts/lato-lig-webfont.eot?#iefix') format('eot'), url('../fonts/lato-lig-webfont.woff') format('woff'), url('../fonts/lato-lig-webfont.ttf') format('truetype'), url('../fonts/lato-lig-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "latoregular";
+  src: url('../fonts/lato-reg-webfont.eot');
+  src: url('../fonts/lato-reg-webfont.eot?#iefix') format('eot'), url('../fonts/lato-reg-webfont.woff') format('woff'), url('../fonts/lato-reg-webfont.ttf') format('truetype'), url('../fonts/lato-reg-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "latobold";
+  src: url('../fonts/lato-bol-webfont.eot');
+  src: url('../fonts/lato-bol-webfont.eot?#iefix') format('eot'), url('../fonts/lato-bol-webfont.woff') format('woff'), url('../fonts/lato-bol-webfont.ttf') format('truetype'), url('../fonts/lato-bol-webfont.svg') format('svg');
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -34px;
+  /* always the same as footer height including paddings and/or borders */
+}
+
+.push-sticky-footer {
+  height: 34px;
+  /* always the same as footer height including paddings and/or borders */
+}
+
+/* full page such as 404, login, register */
+.full-page-wrapper .inner-page {
+  padding-top: 5%;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 768px) {
+  .full-page-wrapper {
+    position: initial;
+    padding-top: 5em;
+    margin-top: 0;
+  }
+  .full-page-wrapper .inner-page {
+    position: relative;
+    padding: 0 1em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .full-page-wrapper {
+    padding-top: 0;
+  }
+  .full-page-wrapper .inner-page {
+    padding: 5em 1em;
+  }
+}
+
+.red-font {
+  color: #e60404 !important;
+}
+
+.yellow-font {
+  color: #ffb800 !important;
+}
+
+.green-font {
+  color: #3e9c1a !important;
+}
+
+.dropdown-menu,
+.panel,
+.well,
+code {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+.panel {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.link-disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.bottom-30px {
+  margin-bottom: 30px;
+}
+
+/* 2 column data presentation */
+.data-row {
+  margin-bottom: 0;
+}
+.data-row .data-name,
+.data-row .data-value {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 5px;
+}
+@media screen and (max-width: 480px) {
+  .data-row .data-name,
+  .data-row .data-value {
+    display: block;
+  }
+}
+.data-row .data-name {
+  width: 12em;
+  background-color: #ececec;
+  color: #b9b9b9;
+  font-size: 0.9em;
+  vertical-align: top;
+}
+.data-row .data-value {
+  padding-left: 10px;
+}
+
+/* nav stacked */
+.nav-stacked > li {
+  border: 1px solid #dddddd;
+}
+.nav-stacked > li:not(:first-child) {
+  border-top: none;
+}
+.nav-stacked > li > a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+.nav-stacked > li + li {
+  margin-top: 0;
+}
+
+.control-inline {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/*------------------------------------------------*/
+/*  Footer
+/*------------------------------------------------*/
+.footer {
+  color: #fff;
+  padding: 10px;
+  background-color: #555555;
+  font-size: 0.9em;
+  text-align: center;
+}

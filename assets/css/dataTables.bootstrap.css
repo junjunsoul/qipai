@@ -1,0 +1,472 @@
+﻿table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
+}
+
+table.dataTable td,
+table.dataTable th {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+    text-align: center;
+}
+
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-space: nowrap;
+}
+
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    width: 75px;
+    display: inline-block;
+}
+
+.dataTables_filter {
+    float: right;
+}
+
+div.dataTables_filter label {
+    font-weight: normal;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.dataTables_filter label:before {
+    font-family: "FontAwesome";
+    content: "\f002";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    width: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    color: #5db2ff;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.dataTables_filter input {
+    width: 16em;
+    padding-left: 28px;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 8px;
+    white-space: nowrap;
+    float: left;
+}
+
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+div.dataTables_wrapper div.dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -26px;
+    text-align: center;
+    padding: 1em 0;
+}
+
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+    padding-right: 30px;
+}
+
+table.dataTable thead > tr > th:active,
+table.dataTable thead > tr > td:active {
+    outline: none;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer;
+    position: relative;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    opacity: 0.5;
+}
+
+table.dataTable thead .sorting:after {
+    opacity: 0.2;
+    content: "\e150";
+    /* sort */
+}
+
+table.dataTable thead .sorting_asc:after {
+    content: "\e155";
+    /* sort-by-attributes */
+}
+
+table.dataTable thead .sorting_desc:after {
+    content: "\e156";
+    /* sort-by-attributes-alt */
+}
+
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    color: #eee;
+}
+
+div.dataTables_scrollHead table.dataTable {
+    margin-bottom: 0 !important;
+}
+
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+div.dataTables_scrollBody table thead .sorting:after,
+div.dataTables_scrollBody table thead .sorting_asc:after,
+div.dataTables_scrollBody table thead .sorting_desc:after {
+    display: none;
+}
+
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+    border-top: none;
+}
+
+div.dataTables_scrollFoot table {
+    margin-top: 0 !important;
+    border-top: none;
+}
+
+@media screen and (max-width: 500px) {
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_paginate {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    div.dataTables_filter label,.dataTables_filter input{
+        width: 100%;
+    }
+}
+
+table.dataTable.table-condensed > thead > tr > th {
+    padding-right: 20px;
+}
+
+table.dataTable.table-condensed .sorting:after,
+table.dataTable.table-condensed .sorting_asc:after,
+table.dataTable.table-condensed .sorting_desc:after {
+    top: 6px;
+    right: 6px;
+}
+
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    border-left-width: 0;
+}
+
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+    border-right-width: 0;
+}
+
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+    border-bottom-width: 0;
+}
+
+div.dataTables_scrollHead table.table-bordered {
+    border-bottom-width: 0;
+}
+
+div.table-responsive > div.dataTables_wrapper > div.row {
+    margin: 0;
+}
+
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+    padding-left: 0;
+}
+
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+    padding-right: 0;
+}
+
+
+/*button*/
+
+div.dt-button-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    background-color: white;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 21;
+}
+
+div.dt-button-info h2 {
+    padding: 0.5em;
+    margin: 0;
+    font-weight: normal;
+    border-bottom: 1px solid #ddd;
+    background-color: #f3f3f3;
+}
+
+div.dt-button-info > div {
+    padding: 1em;
+}
+
+ul.dt-button-collection.dropdown-menu {
+    display: block;
+    z-index: 2002;
+    -webkit-column-gap: 8px;
+    -moz-column-gap: 8px;
+    -ms-column-gap: 8px;
+    -o-column-gap: 8px;
+    column-gap: 8px;
+}
+
+ul.dt-button-collection.dropdown-menu.fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -75px;
+    border-radius: 0;
+}
+
+ul.dt-button-collection.dropdown-menu.fixed.two-column {
+    margin-left: -150px;
+}
+
+ul.dt-button-collection.dropdown-menu.fixed.three-column {
+    margin-left: -225px;
+}
+
+ul.dt-button-collection.dropdown-menu.fixed.four-column {
+    margin-left: -300px;
+}
+
+ul.dt-button-collection.dropdown-menu > * {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+ul.dt-button-collection.dropdown-menu.two-column {
+    width: 300px;
+    padding-bottom: 1px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+}
+
+ul.dt-button-collection.dropdown-menu.three-column {
+    width: 450px;
+    padding-bottom: 1px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    -o-column-count: 3;
+    column-count: 3;
+}
+
+ul.dt-button-collection.dropdown-menu.four-column {
+    width: 600px;
+    padding-bottom: 1px;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    -ms-column-count: 4;
+    -o-column-count: 4;
+    column-count: 4;
+}
+
+div.dt-button-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2001;
+}
+
+@media screen and (max-width: 500px) {
+    div.dt-buttons {
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+    div.dt-buttons a.btn {
+        float: none;
+    }
+}
+
+
+/*autofill*/
+
+div.dt-autofill-handle {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    z-index: 102;
+    box-sizing: border-box;
+    border: 1px solid #337ab7;
+    background: #337ab7
+}
+
+div.dt-autofill-select {
+    position: absolute;
+    z-index: 1001;
+    background-color: #337ab7;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.5) 10px)
+}
+
+div.dt-autofill-select.top,
+div.dt-autofill-select.bottom {
+    height: 3px;
+    margin-top: -1px
+}
+
+div.dt-autofill-select.left,
+div.dt-autofill-select.right {
+    width: 3px;
+    margin-left: -1px
+}
+
+div.dt-autofill-list {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin-left: -250px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #555;
+    border: 2px solid #444;
+    z-index: 11;
+    box-sizing: border-box;
+    padding: 1.5em 2em
+}
+
+div.dt-autofill-list ul {
+    display: table;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%
+}
+
+div.dt-autofill-list ul li {
+    display: table-row
+}
+
+div.dt-autofill-list ul li:last-child div.dt-autofill-question,
+div.dt-autofill-list ul li:last-child div.dt-autofill-button {
+    border-bottom: none
+}
+
+div.dt-autofill-list ul li:hover {
+    background-color: #f6f6f6
+}
+
+div.dt-autofill-list div.dt-autofill-question {
+    display: table-cell;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ccc
+}
+
+div.dt-autofill-list div.dt-autofill-question input[type=number] {
+    padding: 6px;
+    width: 30px;
+    margin: -2px 0
+}
+
+div.dt-autofill-list div.dt-autofill-button {
+    display: table-cell;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ccc
+}
+
+div.dt-autofill-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    background: radial-gradient(ellipse farthest-corner at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 10
+}
+/*scroller*/
+div.DTS {
+  display: block !important;
+}
+div.DTS tbody th,
+div.DTS tbody td {
+  white-space: nowrap;
+}
+div.DTS div.DTS_Loading {
+  z-index: 1;
+}
+div.DTS div.dataTables_scrollBody {
+  background: repeating-linear-gradient(45deg, #edeeff, #edeeff 10px, white 10px, white 20px);
+}
+div.DTS div.dataTables_scrollBody table {
+  z-index: 2;
+}
+div.DTS div.dataTables_paginate,
+div.DTS div.dataTables_length {
+  display: none;
+}
+
+div.DTS tbody tr.even {
+  background-color: white;
+}
+

@@ -1,0 +1,174 @@
+<div class="row">
+	<div class="col-lg-4 ">
+		<ul class="breadcrumb">
+			<li><i class="fa fa-home"></i><a href="#">主页</a></li>
+			<li>收入分析</li>
+			<li class="active">收入数据</li>
+		</ul>
+	</div>
+</div>
+<div class="main-header">
+	<h2>收入数据</h2>
+	<em>空白页的一个示例</em>
+</div>
+<div class="main-content">
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="fa fa-edit"></i> 筛选条件</h3>
+			<div class="btn-group widget-header-toolbar">
+				<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+			</div>
+		</div>
+		<div class="widget-content">
+			<form class="form-inline" role="form">
+				<div class="form-group">
+					<select class="form-control">
+						<option value="cheese">Cheese</option>
+						<option value="tomatoes">Tomatoes</option>
+						<option value="mozarella">Mozzarella</option>
+						<option value="mushrooms">Mushrooms</option>
+						<option value="pepperoni">Pepperoni</option>
+						<option value="onions">Onions</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<span class="input-icon icon-right">
+                        <input type="text" class="form-control" placeholder="生产日期">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+            	</div>
+            	<div class="form-group">
+            		<input type="text" class="form-control" placeholder='雇主名称' name="">
+            	</div>	
+				<div class="control-inline simple-checkbox">
+					<input type="checkbox" id="checkbox1" name="checkbox1">
+					<label for="checkbox1">是否使用</label>
+				</div>
+				<button type="submit" class="btn btn-default">
+					<i class="glyphicon glyphicon-search"></i> 提交
+				</button>
+			</form>
+		</div>
+	</div>
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"> 每日在线用户</i></h3>
+		</div>
+		<div class="widget-content">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#T1" data-toggle="tab"><i class="fa fa-list"></i> 收入金额</a></li>
+				<li><a href="#T2" data-toggle="tab"><i class="fa fa-list"></i> 充值次数</a></li>
+				<li><a href="#T3" data-toggle="tab"><i class="fa fa-list"></i> 充值人数</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="T1">
+					<div id="c_1"></div>
+				</div>
+				<div class="tab-pane fade " id="T2">
+					<div id="c_2"></div>
+				</div>
+				<div class="tab-pane fade" id="T3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"> 付费等级</i></h3>
+		</div>
+		<div class="widget-content">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#T4" data-toggle="tab"><i class="fa fa-list"></i> 收入金额</a></li>
+				<li><a href="#T5" data-toggle="tab"><i class="fa fa-list"></i> 充值人次</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="T4">
+					<div id="c_3"></div>
+				</div>
+				<div class="tab-pane fade " id="T5">
+					<div id="c_4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+    $('#c_1').highcharts({
+        chart: {
+        	backgroundColor: '#f9f9f9',
+            type: 'area'
+        },
+	    exporting: {
+	        url: 'http://export.hcharts.cn/'
+	    },
+        title: {
+            text: '',
+        },
+        subtitle: {
+            text: ''
+        },
+        legend:{
+        	enabled:false
+        },
+        xAxis: {
+    		categories: ['8月1', '8月2', '8月3', '8月4', '8月5', '8月6', '8月7']
+		},		        
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            shared: true
+        },
+        series: [
+        {
+            name: '收入金额',
+            data: [6 , 11, 32, 110, 235, 369, 640]
+        }]
+    });
+	$('#c_3').highcharts({
+        chart: {
+        	backgroundColor: '#f9f9f9',
+            type: 'column'
+        },
+        title: {
+            text: '收入金额'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                '1',
+                '2',
+                '3',
+                '4',
+                '5',
+                '6',
+                '7',
+                '8',
+                '9',
+                '10',
+                '11',
+                '12'
+            ]
+        },
+        legend:{
+        	enabled:false
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        series: [{
+            name: '收入金额',
+            data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+        }]
+    });
+});
+</script>

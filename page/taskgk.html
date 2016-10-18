@@ -1,0 +1,253 @@
+<div class="row">
+	<div class="col-lg-4 ">
+		<ul class="breadcrumb">
+			<li><i class="fa fa-home"></i><a href="#">主页</a></li>
+			<li>任务分析</li>
+			<li class="active">任务和关卡</li>
+		</ul>
+	</div>
+</div>
+<div class="main-header">
+	<h2>任务和关卡</h2>
+	<em>空白页的一个示例</em>
+</div>
+<div class="main-content">
+	<div class="widget">
+		<div class="widget-header">
+			<h3><i class="fa fa-edit"></i> 筛选条件</h3>
+			<div class="btn-group widget-header-toolbar">
+				<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
+			</div>
+		</div>
+		<div class="widget-content">
+			<form class="form-inline" role="form">
+				<div class="form-group">
+					<select class="form-control">
+						<option value="cheese">Cheese</option>
+						<option value="tomatoes">Tomatoes</option>
+						<option value="mozarella">Mozzarella</option>
+						<option value="mushrooms">Mushrooms</option>
+						<option value="pepperoni">Pepperoni</option>
+						<option value="onions">Onions</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<span class="input-icon icon-right">
+                        <input type="text" class="form-control" placeholder="生产日期">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+            	</div>
+            	<div class="form-group">
+            		<input type="text" class="form-control" placeholder='雇主名称' name="">
+            	</div>	
+				<div class="control-inline simple-checkbox">
+					<input type="checkbox" id="checkbox1" name="checkbox1">
+					<label for="checkbox1">是否使用</label>
+				</div>
+				<button type="submit" class="btn btn-default">
+					<i class="glyphicon glyphicon-search"></i> 提交
+				</button>
+			</form>
+		</div>
+	</div>
+	<div class="widget">
+    	<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"></i>新手引导转化率</h3>
+    	</div>
+	    <div class="widget-content">
+	    	<div id="c_0"></div>
+	    </div>
+	</div>	
+	<div class="widget">
+    	<div class="widget-header">
+			<h3><i class="glyphicon glyphicon-th-list"></i>任务或关卡详情</h3>
+			<ul class="nav nav-tabs pull-right">
+				<li class="active">
+					<a href="#tab1" data-toggle="tab"><i class="glyphicon glyphicon-user"></i> 全部</a>
+				</li>		
+				<li>
+					<a href="#tab2" data-toggle="tab"><i class="glyphicon glyphicon-user"></i> 新手</a>
+				</li>	
+				<li>
+					<a href="#tab3" data-toggle="tab"><i class="glyphicon glyphicon-user"></i> 主线</a>
+				</li>							
+			</ul>
+    	</div>
+	    <div class="widget-content flip-scroll">
+			<div class="tab-content no-padding">
+				<div class="tab-pane fade active in" id="tab1">
+										
+					<table class="table table-bordered table-striped table-condensed flip-content">
+						<thead class="flip-content bordered-palegreen">		
+							<tr><th>名称</th><th>别名</th><th>类型</th><th>进入次数</th><th>平均完成时间</th><th>失败次数</th><th>失败率</th></tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><i class="fa fa-plus-square-o row-details" data-r='ct-001'></i> 1级</td>
+								<td>50 secs</td>
+								<td>0%</td>
+								<td>1234</td>
+								<td>1,226.00</td>
+								<td>1234</td>
+								<td>30%</td>
+							</tr>
+							<tr style="display:none" id='ct-001'>
+								<td  colspan="7">
+									<ul class="nav nav-tabs"> 
+										<li class="active"><a href="#T1" data-toggle="tab"><i class="fa fa-list"></i> 失败原因</a></li>
+										<li><a href="#T2" data-toggle="tab"><i class="fa fa-list"></i> 玩家等级</a></li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane fade active in" id="T1">
+											<div id="c_1"></div>
+										</div>
+										<div class="tab-pane fade " id="T2">
+											<div id="c_2"></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><i class="fa fa-plus-square-o row-details" data-r='ct-002'></i> 2级</td>
+								<td>50 secs</td>
+								<td>0%</td>
+								<td>1234</td>
+								<td>1,226.00</td>
+								<td>1234</td>
+								<td>30%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="tab2">
+				</div>
+				<div class="tab-pane fade" id="tab3">
+				</div>				
+			</div>
+	    </div>
+	</div>	
+</div>
+<script type="text/javascript">
+$(function(){
+    $('.row-details').click(function(){
+    	var id=$(this).data('r');
+    	if($(this).hasClass('fa-plus-square-o')){
+    		$(this).removeClass('fa-plus-square-o').addClass('fa-minus-square-o');
+			$('#'+id).show();
+    	}
+    	else
+    	{
+    		$(this).removeClass('fa-minus-square-o').addClass('fa-plus-square-o');
+			$('#'+id).hide();
+    	}
+    });
+	$('#c_0').highcharts({
+		chart:{
+			backgroundColor: '#f9f9f9',
+		},
+        title: {
+            text: '新手引导转化率'
+        },
+        xAxis: {
+            categories: ['1', '2', '3', '4', '5']
+        },
+        series: [{
+            type: 'column',
+            name: 'Jane',
+            data:[3, 2.67, 3, 6.33, 3.33],
+            zIndex: 0,
+            dataLabels: {
+                enabled:true
+            }
+        },{
+            type: 'spline',
+            name: 'Average',
+            data: [3, 2.67, 3, 6.33, 3.33],
+            zIndex: 1,
+            dataLabels: {
+                enabled:true
+            },
+            linkedTo: ':previous'
+        }]
+    });
+    $('#c_1').highcharts({
+        chart: {
+        	backgroundColor: '#f9f9f9',
+            type: 'area'
+        },
+	    exporting: {
+	        url: 'http://export.hcharts.cn/'
+	    },
+        title: {
+            text: '',
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+    		categories: ['8月1', '8月2', '8月3', '8月4', '8月5', '8月6', '8月7']
+		},		        
+        yAxis: {
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            shared: true
+        },
+        series: [
+        {
+            name: '失败原因',
+            data: [6 , 11, 32, 110, 235, 369, 640]
+        }]
+    });
+	$('#c_2').highcharts({                                           
+	        chart: {                                                           
+	            type: 'bar',
+	        	backgroundColor: '#f9f9f9'                                             
+	        },  
+		    exporting: {
+		        url: 'http://export.hcharts.cn/'
+		    },                                                              
+	        title: {                                                           
+	            text: ''                    
+	        },                                                                 
+	        subtitle: {                                                        
+	            text: ''                                  
+	        },                                                                 
+	        xAxis: {                                                           
+	            categories: ['1个', '2个', '3个', '4个', '5个','6-10个'],
+	            title: {                                                       
+	                text: null                                                 
+	            }                                                              
+	        },                                                                 
+	        yAxis: {                                                           
+	            min: 0,                                                        
+	            title: {                                                       
+	                text: '',                             
+	                align: 'high'                                              
+	            },                                                             
+	            labels: {                                                      
+	                overflow: 'justify'                                        
+	            }                                                              
+	        },                                                                 
+	        tooltip: {                                                         
+	            valueSuffix: ''                                       
+	        },                                                                 
+	        plotOptions: {                                                     
+	            bar: {                                                         
+	                dataLabels: {                                              
+	                    enabled: true                                          
+	                }                                                          
+	            }                                                              
+	        },                              
+	        credits: {                                                         
+	            enabled: false                                                 
+	        },                                                                 
+	        series: [{                                                         
+	            name: '玩家等级',                                             
+	            data: [107, 31, 635, 203, 2,200]                                   
+	        }]                                                                 
+	});                     
+});
+</script>
