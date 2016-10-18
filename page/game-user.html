@@ -100,29 +100,6 @@
 	</div>
 	<div class="widget">
 		<div class="widget-header">
-			<h3><i class="glyphicon glyphicon-th-list"></i>新增玩家</h3>
-			<ul class="nav nav-tabs pull-right" id="t1">
-				<li class="active">
-					<a href="#tab1" data-toggle="tab" data-cid='c1'><i class="glyphicon glyphicon-user"></i> 新增激活和账户</a>
-				</li>
-				<li class="">
-					<a href="#tab2" data-toggle="tab"  data-cid='c2'><i class="glyphicon glyphicon-sort"></i> 玩家转化</a>
-				</li>										
-			</ul>
-		</div>
-		<div class="widget-content">
-			<div class="tab-content no-padding">
-				<div class="tab-pane fade active in" id="tab1">
-					<div id="c1" style="height:300px;"></div>
-				</div>
-				<div class="tab-pane fade"  id="tab2">
-					<div id="c2" style="height:300px;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="widget">
-		<div class="widget-header">
 			<h3><i class="glyphicon glyphicon-th-list"></i> 充值玩家</h3>
 		</div>
 		<div class="widget-content">
@@ -157,231 +134,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<!-- WIDGET LINE CHART -->
-			<div class="widget">
-				<div class="widget-header">
-					<h3><i class="fa fa-bar-chart-o"></i> 单设备账户数量分析</h3> <em> （小号分析）</em>
-				</div>
-				<div class="widget-content">
-					<div id="c3" style="height: 300px"></div>
-				</div>
-			</div>
-			<!-- END WIDGET LINE CHART -->
-		</div>
-		<div class="col-md-6">
-			<!-- WIDGET AREA CHART -->
-			<div class="widget">
-				<div class="widget-header">
-					<h3><i class="fa fa-bar-chart-o"></i> 玩家账户类型</h3>
-				</div>
-				<div class="widget-content">
-					<div class="demo-flot-chart" id="c4"></div>
-				</div>
-			</div>
-			<!-- END WIDGET AREA CHART -->
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<!-- WIDGET VERTICAL BAR CHART  -->
-			<div class="widget">
-				<div class="widget-header">
-					<h3><i class="fa fa-bar-chart-o"></i> 地区</h3>
-				</div>
-				<div class="widget-content">
-					<div class="demo-flot-chart" id="c5"></div>
-				</div>
-			</div>
-			<!-- END WIDGET VERTICAL BAR CHART  -->
-		</div>
-		<div class="col-md-6">
-			<!-- WIDGET HORIZONTAL BAR CHART  -->
-			<div class="widget">
-				<div class="widget-header">
-					<h3><i class="fa fa-bar-chart-o"></i> 渠道</h3>
-				</div>
-				<div class="widget-content">
-					<div class="demo-flot-chart" id="c6"></div>
-				</div>
-			</div>
-			<!-- END WIDGET HORIZONTAL BAR CHART  -->
-		</div>
-	</div>
-	<div class="widget">
-		<div class="widget-header">
-			<h3><i class="fa fa-bar-chart-o"></i> 单设备账户数量分析</h3>
-		</div>
-		<div class="widget-content">
-			<div class="row">
-				<div class="col-md-10">
-					<div class="demo-flot-chart" id="c7"></div>
-				</div>
-				<div class="col-md-2">
-					<!-- must be id="choices" -->
-					<div id="choices"></div>
-				</div>
-			</div>
-		</div>
-	</div>
 </div><!-- /main-content -->
 
 <script src="assets/js/datatable/datatables-init.js"></script>
 <script type="text/javascript">
 	$(function () {
-		var chart ={
-			c1:{
-				obj:echarts.init($('#c1')[0],'walden'),
-				option:{
-				    title: {
-				        text: ''
-				    },
-				    tooltip : {
-				        trigger: 'axis'
-				    },
-				    legend: {
-				        data:['新增玩家','设备激活']
-				    },
-				    toolbox: {
-				        feature: {
-				            saveAsImage: {}
-				        }
-				    },
-				    grid: {
-				        left: '3%',
-				        right: '3%',
-				        bottom: '0%',
-				        containLabel: true
-				    },
-				    xAxis : [
-				        {
-				            type : 'category',
-				            boundaryGap : false,
-				            data : ['周一','周二','周三','周四','周五','周六','周日']
-				        }
-				    ],
-				    yAxis : [
-				        {
-				            type : 'value'
-				        }
-				    ],
-				    series : [
-				        {
-				            name:'新增玩家',
-				            type:'line',
-				            stack: '总量',
-				            areaStyle: {normal: {}},
-				            data:[120, 132, 101, 134, 90, 230, 210]
-				        },
-				        {
-				            name:'设备激活',
-				            type:'line',
-				            stack: '总量',
-				            areaStyle: {normal: {}},
-				            data:[220, 182, 191, 234, 290, 330, 310]
-				        }
-				    ]
-				}
-			},
-			c2:{
-				obj:echarts.init($('#c2')[0],'walden'),
-				option:{
-				    title: {
-				        text: ''
-				    },
-				    tooltip : {
-				        trigger: 'axis'
-				    },
-				    legend: {
-				        data:['玩家转化'],
-				        show:false
-				    },
-				    toolbox: {
-				        feature: {
-				            saveAsImage: {}
-				        }
-				    },
-				    grid: {
-				        left: '3%',
-				        right: '3%',
-				        bottom: '0%',
-				        containLabel: true
-				    },
-				    xAxis : [
-				        {
-				            type : 'category',
-				            boundaryGap : false,
-				            data : ['周一','周二','周三','周四','周五','周六','周日']
-				        }
-				    ],
-				    yAxis : [
-				        {
-				            type : 'value'
-				        }
-				    ],
-				    series : [
-				        {
-				            name:'玩家转化',
-				            type:'line',
-				            stack: '总量',
-				            areaStyle: {normal: {}},
-				            data:[120, 132, 101, 134, 90, 230, 210]
-				        }
-				    ]
-				}
-			},
-			c3:{
-				obj:echarts.init($('#c3')[0],'walden'),
-				option:{
-				    title: {
-				        text: '世界人口总量',
-				        subtext: '数据来自网络'
-				    },
-				    tooltip: {
-				        trigger: 'axis',
-				        axisPointer: {
-				            type: 'shadow'
-				        }
-				    },
-				    legend: {
-				        data: ['2011年', '2012年']
-				    },
-				    grid: {
-				        left: '3%',
-				        right: '4%',
-				        bottom: '3%',
-				        containLabel: true
-				    },
-				    xAxis: {
-				        type: 'value'
-				    },
-				    yAxis: {
-				        type: 'category',
-				        data: ['巴西','印尼','美国','印度','中国','世界人口(万)']
-				    },
-				    series: [
-				        {
-				            name: '2011年',
-				            type: 'bar',
-				            data: [18203, 23489, 29034, 104970, 131744, 630230]
-				        },
-				        {
-				            name: '2012年',
-				            type: 'bar',
-				            data: [19325, 23438, 31000, 121594, 134141, 681807]
-				        }
-				    ]
-				}
-			}
-		};
 		InitiateSimpleDataTable.init();		
 		$('.datesel').selDate({
 			e_click:function(item){}
 		});
 		$('.multi-c').multi_c();
-
-		$('.ckcheked').bootstrapSwitch();
 
 		$('#multiselect6,#multiselect7').select2();
 
@@ -390,23 +152,6 @@
 	        lang: $.scParameter.lang,
 	        display: $.scParameter.display,
 	        mode:$.scParameter.mode
-	    });
-
-		$('#t1 a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-			var cid=$(this).data('cid');
-			$.each(chart,function(i,j){
-				j.obj.resize();
-			});
-		});
-		//初始化图标
-		$.each(chart,function(i,j){
-			j.obj.setOption(j.option);
-			
-		});
-		window.onresize =function(){
-			$.each(chart,function(i,j){
-				j.obj.resize();
-			});
-		}                
+	    });   
 	});   
 </script>

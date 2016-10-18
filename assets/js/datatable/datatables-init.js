@@ -32,10 +32,10 @@ var InitiateSimpleDataTable = function () {
                  dom: 'Bfrtip',
                  buttons: 
                  [
-                    // {
-                    //     extend: 'copy',
-                    //     text: '复制'
-                    // },
+                    {
+                        extend: 'copy',
+                        text: '复制'
+                    },
 
                     'excel',
                     {
