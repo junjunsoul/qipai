@@ -416,3 +416,28 @@
     margin-bottom: 15px;
   }
 }
+/* erorr list */
+.parsley-errors-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+.parsley-errors-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+}
+.parsley-errors-list li {
+  color: #db3833;
+  font-size: 0.9em;
+  margin-top: 3px;
+}

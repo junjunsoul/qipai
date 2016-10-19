@@ -147,7 +147,7 @@
             ajax:'data.json',
             columns: [
                 { data: "ct1", render: function ( data, type, row ) {
-                    return '<a href="javascript:void(0)">[购入房卡]</a>';
+                    return data;
                     }
                 },
                 { data: "ct2" },
@@ -175,7 +175,7 @@
                 {
                     extend: 'colvis',
                     text: '设置列'
-                },              
+                },          
                 'pageLength'
              ],
             "oLanguage": $.scParameter.datatable_lang
