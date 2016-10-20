@@ -1,34 +1,15 @@
 {
   "data": [
     {
-      "partner_id":"row_1",
-      "ct2":"Tiger",
-      "ct3":"Nixon",
-      "ct4":"System Architect",
-      "ct5":"t.nixon@datatables.net",
-      "ct6":"Edinburgh",
-      "ct7":"5421",
-      "ct8":"61"
-    },
-    {
-      "partner_id":"row_2",
-      "ct2":"Tiger",
-      "ct3":"Nixon",
-      "ct4":"System Architect",
-      "ct5":"t.nixon@datatables.net",
-      "ct6":"Edinburgh",
-      "ct7":"5421",
-      "ct8":"61"
-    },
-    {
-      "partner_id":"row_3",
-      "ct2":"Tiger",
-      "ct3":"Nixon",
-      "ct4":"System Architect",
-      "ct5":"t.nixon@datatables.net",
-      "ct6":"Edinburgh",
-      "ct7":"5421",
-      "ct8":"61"
+      "name":"junjunsoul",
+      "cardNum":"100",
+      "sex":"0",
+      "mobile":"132658444",
+      "grade":"2",
+      "remark":"第一撸",
+      "parent":"1",
+      "gameTypeId":"0",
+      "state":"3"
     }
   ]
 }
