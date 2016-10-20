@@ -132,6 +132,7 @@
                             </th>
                         </tr>
                     </thead>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -148,84 +149,75 @@
 					    <div class="row">
 					    	<div class="col-xs-6">
 								<div class="form-group">
-									<label for="text-input1">代理商账号</label>
-									<input type="text" id="text-input1" 
-										data-parsley-required-message="密码不可为空" 
-										data-parsley-minlength-message="最少8位"
+									<label>代理商账号</label>
+									<input type="text"
 										class="form-control" 
 										required 
+                                        data-parsley-minlength-message="最少8位"                                        
 										data-parsley-minlength="8">
 								</div>					    		
 					    	</div>
 					    	<div class="col-xs-6">
 								<div class="form-group">
-									<label for="text-input2">游戏归属</label>
-									<input type="text" id="text-input2" class="form-control"  data-parsley-range="[5,10]">
+									<label>游戏归属</label>
+									<input type="text" class="form-control" required>
 								</div>					    		
 					    	</div>
 					    </div>
 					    <div class="row">
 					    	<div class="col-xs-6">
 								<div class="form-group">
-									<label for="text-input1">代理商账号</label>
-									<input type="text" id="text-input1" 
-										data-parsley-required-message="密码不可为空" 
-										data-parsley-minlength-message="最少8位"
-										class="form-control" 
-										 
-										data-parsley-minlength="8">
+									<label>房卡数</label>
+									<input type="number" class="form-control" required>
 								</div>					    		
 					    	</div>
 					    	<div class="col-xs-6">
-								<div class="form-group">
-									<label for="text-input2">游戏归属</label>
-									<input type="text" id="text-input2" class="form-control"  data-parsley-range="[5,10]">
-								</div>					    		
+                                <div class="form-group">
+                                    <label>级别</label>
+                                    <input type="number"
+                                        data-parsley-maxlength-message="最多2位"
+                                        required
+                                        class="form-control" 
+                                        data-parsley-maxlength="2">
+                                </div>  				    		
 					    	</div>
 					    </div>
 					    <div class="row">
 					    	<div class="col-xs-6">
 								<div class="form-group">
-									<label for="text-input1">代理商账号</label>
-									<input type="text" id="text-input1" 
-										data-parsley-required-message="密码不可为空" 
-										data-parsley-minlength-message="最少8位"
-										class="form-control" 
-										 
-										data-parsley-minlength="8">
+									<label>性别</label>
+                                    <select class="form-control">
+                                        <option value="0">男</option>
+                                        <option value="1">女</option>
+                                    </select>
 								</div>					    		
 					    	</div>
 					    	<div class="col-xs-6">
 								<div class="form-group">
-									<label for="text-input2">游戏归属</label>
-									<input type="text" id="text-input2" class="form-control" data-parsley-range="[5,10]">
+									<label>联系方式</label>
+									<input type="tel" name="mobile" 
+                                    class="form-control" 
+                                    required>
 								</div>					    		
 					    	</div>
 					    </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>上级代理商</label>
+                                <input name="parent" type="text" class="form-control" >
+                            </div>                          
+                        </div>
 					    <div class="row">
-					    	<div class="col-xs-6">
-								<div class="form-group">
-									<label for="text-input1">代理商账号</label>
-									<input type="text" id="text-input1" 
-										data-parsley-required-message="密码不可为空" 
-										data-parsley-minlength-message="最少8位"
-										class="form-control" 
-										 
-										data-parsley-minlength="8">
-								</div>					    		
-					    	</div>
-					    	<div class="col-xs-6">
-								<div class="form-group">
-									<label for="text-input2">游戏归属</label>
-									<input type="text" id="text-input2" class="form-control" data-parsley-range="[5,10]">
-								</div>					    		
-					    	</div>
+							<div class="form-group">
+								<label>备注</label>
+                                <textarea class="form-control" rows="3"></textarea>
+							</div>					    		
 					    </div>
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> 关闭</button>
-					<button type="button" class="btn btn-custom-primary"><i class="fa fa-check-circle"></i> 保存</button>
+					<button type="button" class="btn btn-custom-primary" id='formsubmit'><i class="fa fa-check-circle"></i> 保存</button>
 				</div>
 			</div>
 		</div>
@@ -234,14 +226,40 @@
 <script src="assets/js/plugins/parsley-validation/parsley.min.js"></script>
 <script src="assets/js/plugins/jquery.form/jquery.form.js"></script>
 <script type="text/javascript">
+    var url=p_url.agent;
+    var fn={
+        give:function(d){
+        },
+        edit:function(d){
+            var table = $('#simpledatatable').DataTable();
+            var rows=table.rows().data();
+            var cur={};
+            $.each(rows,function(a,b){
+                if(b.partner_id==d){
+                    cur=b;
+                }
+            });
+        },
+        stop:function(d){
+
+        }
+    }
+
     $(function () {
         $('#simpledatatable').dataTable({
-            ajax:'data1.json',
+            ajax:url.url_1,
             columns: [
                 { 
-                	data: "ct1", 
+                	data: "partner_id", 
                 	render: function ( data, type, row ) {
-                   	 	return data;
+                        if(type=='display'){
+                            var str=data;
+                            str+=" <a class='label label-info' onclick=\"fn.give('"+data+"')\" href='javascript:void(0)'>赠送房卡</a>"
+                            str+=" <a class='label label-warning' onclick=fn.edit('"+data+"') href='javascript:void(0)'>修改</a>"
+                            str+=" <a class='label label-danger' onclick=\"fn.stop('"+data+"')\" href='javascript:void(0)'>停用</a>"
+                            return str;
+                        }
+                        return data;
                     }
                 },
                 { data: "ct2" },
@@ -253,13 +271,13 @@
                 { data: "ct8" }
             ],
              dom: 'Bfrtip',
-             select:true,
              buttons: 
              [
 				{ 
 					text: '增加代理商信息',
 					action: function () {
-						$('#myModal').modal('show')
+
+						$('#myModal').modal('show');
 					} 
 				}
 				,             
@@ -298,13 +316,14 @@
 		})
 		.on('form:submit', function() {
 		 	$('#advanced-form').ajaxSubmit({
-                url: '12121/ADS',                 //默认是form的action
+                url: url.url_2,                 //默认是form的action
                 type: 'POST',               //默认是form的method（get or post）
                 dataType: "json",           //html(默认), xml, script, json...接受服务端返回的类型
                 //clearForm: true,          //成功提交后，清除所有表单元素的值
                 //resetForm: true,          //成功提交后，重置所有表单元素的值
                 //target: '#output',          //把服务器返回的内容放入id为output的元素中
                 //timeout: 3000,               //限制请求的时间，当请求大于3秒后，跳出请求
+                
                 //提交前的回调函数
                 beforeSubmit: function(arr,$form,options){
                     //formData: 数组对象，提交表单时，Form插件会以Ajax方式自动提交这些数据，格式如：[{name:user,value:val },{name:pwd,value:pwd}]
@@ -312,9 +331,8 @@
                     //options:  options对象
                     //比如可以再表单提交前进行表单验证
                 },
-                //提交成功后的回调函数
                 success: function(data,status,xhr,$form){
-
+                    $('#myModal').modal('hide');
                 },
                 error: function(xhr, status, error, $form){
                     
@@ -325,13 +343,13 @@
             });
             return false;
 		});
-		$('#myModal').on('show.bs.modal', function () {
 
-		});
 		$('#myModal').on('hide.bs.modal', function () {
-			$('#advanced-form').submit();
 			//http://www.cnblogs.com/Philoo/archive/2011/10/05/jeasyui_api_form.html
 			return true;
 		});
+        $('#formsubmit').click(function(){
+            $('#advanced-form').submit();
+        });
     });   
 </script>

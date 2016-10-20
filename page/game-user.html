@@ -7,151 +7,96 @@
 	</div>
 </div>
 <div class="main-header">
-	<h2>新增玩家</h2>
-	<em>空白页的一个示例</em>
+	<h2>发卡操作</h2>
+	<em>给玩家充值房卡数</em>
 </div>
 <div class="main-content">
 	<div class="widget">
-		<div class="widget-content">
-			<div class="row more-seach">
-				<div class="col-xs-4">
-					<div class="input-group btn-group datesel" style="max-width: 250px;">
-						<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-						<button type="button" class="btn btn-default btn-md" 
-						style="width: 100%;"><span></span>
-						</button>
-						<ul class="dropdown-menu" style="width: 100%;">
-							<li style="text-align: center;">
-								<span class="badge" data-tr="0">今日</span>
-								<span class="badge" data-tr="1">昨日</span>
-								<span class="badge" data-tr="7">近7日</span>
-								<span class="badge" data-tr="30">近30日</span>
-								<span class="badge" data-tr="90">全部</span>
-							</li>
-							<li>
-								<div class="form-group">
-									<span class="input-icon icon-right">
-				                        <input type="text" class="form-control" readonly placeholder="筛选日期">
-				                        <i class="fa fa-calendar"></i>
-				                    </span>
-				            	</div>
-							</li>
-							<li style="text-align:right">
-								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
-								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>取消</button>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-xs-8 text-right">
-					<div class="btn-group multi-c">
-						<button type="button" class="btn btn-default btn-md ck"><i class="fa fa-glass"></i> 筛选</button>
-						<button type="button" class="btn btn-default btn-md ck" style="margin-left:0"><span class="caret"></span></button>
-						<ul class="dropdown-menu" role="menu">
-							<li>
-								<div class="title">
-								 	<label>渠道：
-								 		<input type="checkbox" class="ckcheked" data-size="mini">
-								 	</label>
-								 	<label>不筛选</label>
-								</div>
-
-								<div class="multi-content">
-									<select id="multiselect6" multiple="multiple" style="width:100%">
-										<optgroup label="大中华">
-											<option value="analysis">渠道5-</option>
-											<option value="algebra">渠道1*s</option>
-											<option value="discrete">渠道1-899</option>
-											<option value="numerical">渠道231 </option>
-											<option value="probability">渠道1322</option>
-										</optgroup>
-									</select>
-								</div>
-							</li>
-							<li>
-								<div class="title">
-								 	<label>区服：
-								 		<input type="checkbox" class="ckcheked" data-size="mini">
-								 	</label>
-								 	<label>不筛选</label>
-								</div>
-
-								<div class="multi-content">
-									<select id="multiselect7" multiple="multiple" style="width:100%">
-										<optgroup label="华南二区">
-											<option value="analysis">二区-</option>
-											<option value="algebra">二区*s</option>
-											<option value="discrete">二区-899</option>
-											<option value="numerical">二区 </option>
-											<option value="probability">二区</option>
-										</optgroup>
-									</select>
-								</div>
-							</li>
-							<li style="text-align:right;border:0;">
-								<button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
-								<button type="button" class="btn btn-default btn-sm cancel"><i class="fa fa-edit"></i>取消</button>
-							</li>
-						</ul>
-					</div>
-				</div>
+		<div class="widget-header">
+			<h3><i class="fa fa-edit"></i> 搜索玩家</h3>
+			<div class="btn-group widget-header-toolbar">
+				<a href="#" title="Expand/Collapse" class="btn-borderless btn-toggle-expand"><i class="fa fa-chevron-up"></i></a>
 			</div>
+		</div>
+		<div class="widget-content">
+			<form class="form-inline" role="form">
+				<div class="form-group">
+					<select class="form-control" style="width: 150px;">
+						<option value="cheese">3q大战 </option>
+					</select>
+				</div>
+            	<div class="form-group">
+            		<input type="text" class="form-control" placeholder='输入玩家名称...' name="">
+            	</div>
+				<button type="submit" class="btn btn-default">
+					<i class="glyphicon glyphicon-search"></i> 查询
+				</button>
+			</form>
 		</div>
 	</div>
 	<div class="widget">
 		<div class="widget-header">
-			<h3><i class="glyphicon glyphicon-th-list"></i> 充值玩家</h3>
+			<h3><i class="fa fa-user"></i> 玩家信息</h3>
 		</div>
 		<div class="widget-content">
-			<div class="flip-scroll">
-                <table class="table table-bordered table-striped table-condensed flip-content" id="simpledatatable">
-                    <thead class="flip-content bordered-palegreen">
-                        <tr>
-                            <th>
-                                排名
-                            </th>
-                            <th>
-                                账号
-                            </th>
-                            <th>
-                                充值金额
-                            </th>
-                            <th>
-                                充值虚拟币
-                            </th>
-                            <th>
-                            	消耗总额
-                            </th>
-                            <th>
-                            	新增日期
-                            </th>
-                            <th>
-                            	当前等级
-                            </th>
-                        </tr>
-                    </thead>
-                </table>
+			<p style="display: none;">请输入玩家名称进行查询...</p>
+			<div class="row">
+				<div class="col-xs-2">
+					<img src="" style="height: 179px;width: 200px;">
+				</div>
+				<div class="col-xs-4">
+					<div class="user-info-right">
+						<div class="basic-info">
+							<p class="data-row">
+								<span class="data-name">ID</span>
+								<span class="data-value">139269</span>
+							</p>
+							<p class="data-row">
+								<span class="data-name">昵称</span>
+								<span class="data-value">A薇子</span>
+							</p>
+							<p class="data-row">
+								<span class="data-name">性别</span>
+								<span class="data-value">女</span>
+							</p>
+							<p class="data-row">
+								<span class="data-name">房卡数量</span>
+								<span class="data-value">4</span>
+							</p>
+							<p class="data-row">
+								<span class="data-name">注册时间</span>
+								<span class="data-value">1970-1-1 8:00:00</span>
+							</p>
+							<p class="data-row">
+								<span class="data-name">上次登录</span>
+								<span class="data-value">2016-9-29 21:17:55</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-3">
+					<div class="user-info-right">
+						<div class="basic-info">
+							<h4><i class="fa fa-square"></i>房卡操作</h4>
+							<p class="data-row" style="height: 70px;">
+								<span class="data-name">您的当前房卡余额为</span>
+								<span class="data-value">139269</span>
+							</p>
+							<p class="data-row">
+								<input type="number" class="form-control" placeholder='赠送房卡数'>
+							</p>
+							<p>
+								<a href="javascript:void(0)" class="btn btn-block btn-custom-primary"><i class="fa fa-book"></i> 确认</a>
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div><!-- /main-content -->
-
-<script src="assets/js/datatable/datatables-init.js"></script>
 <script type="text/javascript">
 	$(function () {
-		InitiateSimpleDataTable.init();		
-		$('.datesel').selDate({
-			e_click:function(item){}
-		});
-		$('.multi-c').multi_c();
 
-		$('#multiselect6,#multiselect7').select2();
-
-	    $('#rangeTime').mobiscroll().calendar({
-	        theme:$.scParameter.theme,
-	        lang: $.scParameter.lang,
-	        display: $.scParameter.display,
-	        mode:$.scParameter.mode
-	    });   
 	});   
 </script>
