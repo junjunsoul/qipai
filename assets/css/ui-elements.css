@@ -1265,14 +1265,6 @@ input[type="text"].spinedit {
   text-decoration: none;
 }
 
-.gritter-light .gritter-top,
-.gritter-light .gritter-item,
-.gritter-light .gritter-bottom {
-  background-image: none;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #555555;
-}
-
 /* bootstrap tooltip */
 .tooltip .tooltip-inner {
   -webkit-border-radius: 0;

@@ -14,7 +14,7 @@
         <div class="widget-content">
             <form>
                 <div class="input-group input-group-lg">
-                    <input type="search" placeholder="请输入代理商名称...." class="form-control">
+                    <input type="search" id="seachText" placeholder="请输入代理商名称...." class="form-control">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="button" id="seach-btn" data-loading-text="查询中...">
                             <i class="fa fa-search"></i> 查询</button>
@@ -66,6 +66,7 @@
 				</div>
 				<div class="modal-body">
 					<form id="advanced-form" data-parsley-validate novalidate>
+                        <input type="hidden" name="eidttype" value="add">
 					    <div class="row">
 					    	<div class="col-xs-6">
 								<div class="form-group">
@@ -92,7 +93,7 @@
 					    	<div class="col-xs-6">
 								<div class="form-group">
 									<label>密码</label>
-									<input type="number" class="form-control" name='password' required>
+									<input type="number" class="form-control" name='password'>
 								</div>					    		
 					    	</div>
 					    	<div class="col-xs-6">
@@ -140,6 +141,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
+                    <span id="aerr" style="margin-right: 30px;"></span>
 					<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> 关闭</button>
 					<button type="button" class="btn btn-custom-primary" id='formsubmit' data-loading-text="提交中..."><i class="fa fa-check-circle"></i> 保存</button>
 				</div>
@@ -180,6 +182,7 @@
 <script src="assets/js/plugins/parsley-validation/parsley.min.js"></script>
 <script src="assets/js/plugins/jquery.form/jquery.form.js"></script>
 <script type="text/javascript">
+    //document.domain='http://bei546720475.oicp.net/web/partnerList';
     var url=p_url.agent;
     var fn={
         give:function(d){
@@ -195,31 +198,62 @@
                     cur=b;
                 }
             });
+            $('#advanced-form').find('input[name=eidttype]').val('edit');
+            $('#advanced-form').find('input[name=name]').attr('readonly',true);
             $('#advanced-form').initForm({jsonValue:cur});
             $('#myModal').modal('show');
         },
         stop:function(d){
-
+            $.post(url.url_4,{name:d},function(data){
+                $('#simpledatatable').DataTable().ajax.reload();
+            });
         }
     }
     $(function () {
-        $('#seach-btn').click( function() {
-            var btn = $(this);
-            btn.button('loading');
-            //btn.button('reset');
+        $.extend($.gritter.options, {
+            class_name: 'gritter-light',
+            fade_in_speed: 100,
+            fade_out_speed: 100,
+            position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
+            time: 1500,
         });
-        //表单提交
+
+        $('#seach-btn').click( function() {
+            $.gritter.add({
+                title: 'Sticky Alert!',
+                text: 'You have <a href="#">new support message</a>. Click (x) on the top right to close this message.',
+                sticky: true
+            });
+            var btn = $(this);
+            var seachText=$('#seachText').val();
+            btn.button('loading');
+            var table =$('#simpledatatable').DataTable();
+            table.ajax.url(url.url_1+"?seachText="+seachText);
+            table.ajax.reload(function(j){
+                btn.button('reset');
+            });
+        });
+        //房卡数,上级代理,代理级别,添加时间,代理姓名,性别,代理手机号,最后登陆时间,是否管理员,状态,备注
         $('#simpledatatable').dataTable({
-            ajax:url.url_1,
+            "processing": true,
+            //"serverSide": true,
+            "ajax": {
+                "url":url.url_1,
+                //"dataType": "jsonp"
+            },
             columns: [
                 { 
                 	data: "name", 
                 	render: function ( data, type, row ) {
                         if(type=='display'){
                             var str=data;
-                            str+=" <a class='label label-info' onclick=\"fn.give('"+data+"')\" href='javascript:void(0)'>赠送房卡</a>"
-                            str+=" <a class='label label-warning' onclick=fn.edit('"+data+"') href='javascript:void(0)'>修改</a>"
-                            str+=" <a class='label label-danger' onclick=\"fn.stop('"+data+"')\" href='javascript:void(0)'>停用</a>"
+                            if(row.state=="1"){
+                                str+=" <a class='label label-info' onclick=\"fn.give('"+data+"')\" href='javascript:void(0)'>赠送房卡</a>"
+                                str+=" <a class='label label-warning' onclick=fn.edit('"+data+"') href='javascript:void(0)'>修改</a>"
+                                str+=" <a class='label label-danger' onclick=\"fn.stop('"+data+"',0)\" href='javascript:void(0)'>停用</a>"
+                            }else{
+                                str+=" <a class='label label-danger' onclick=\"fn.stop('"+data+"',1)\" href='javascript:void(0)'>启用</a>"
+                            }
                             return str;
                         }
                         return data;
@@ -240,6 +274,8 @@
                         $("#advanced-form").resetForm();
                         $('#formsubmit').button('reset');
 						$('#myModal').modal('show');
+                        $('#advanced-form').find('input[name=eidttype]').val('add');
+                        $('#advanced-form').find('input[name=name]').attr('readonly',false);
 					} 
 				}
 				,             
@@ -258,6 +294,7 @@
             "oLanguage": $.scParameter.datatable_lang
         });
 
+        //表单提交
 		$('#advanced-form').parsley().on('field:validated', function() {
 			var ok = $('.parsley-error').length === 0;
 			$('.bs-callout-info').toggleClass('hidden', !ok);
@@ -287,9 +324,10 @@
                     $('#myModal').modal('hide');
                 },
                 error: function(xhr, status, error, $form){
-                    
+                    $('#aerr').html(error);
                 },
                 complete: function(xhr, status, $form){
+                    $('#simpledatatable').DataTable().ajax.reload()
                     btn.button('reset');
                 }
             });
@@ -307,7 +345,7 @@
             btn.button('loading');
 
             $('#cz-form').ajaxSubmit({
-                url: url.url_2,
+                url: url.url_3,
                 type: 'POST',
                 dataType: "json",
                 beforeSubmit: function(arr,$form,options){
@@ -320,12 +358,12 @@
                     
                 },
                 complete: function(xhr, status, $form){
+                    $('#simpledatatable').DataTable().ajax.reload()
                     btn.button('reset');
                 }
             });
             return false;
         });
-
 
 		$('#myModal').on('hide.bs.modal', function () {
             $("#advanced-form").resetForm();

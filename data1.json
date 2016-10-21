@@ -1,15 +1,21 @@
 {
-  "data": [
-    {
-      "name":"junjunsoul",
-      "cardNum":"100",
-      "sex":"0",
-      "mobile":"132658444",
-      "grade":"2",
-      "remark":"第一撸",
-      "parent":"1",
-      "gameTypeId":"0",
-      "state":"3"
-    }
-  ]
+    "data": [
+        {
+            "partnerId": 1,
+            "parent": 0,
+            "grade": 1,
+            "level": 1,
+            "cardNum": 999999,
+            "addTime": 1477020554000,
+            "name": "xiaobai",
+            "sex": 1,
+            "mobile": "13812312312",
+            "password": null,
+            "lastLoginTime": 960825601000,
+            "isAdmin": 1,
+            "state": 1,
+            "gameTypeId": 1,
+            "remark": ""
+        }
+    ]
 }
