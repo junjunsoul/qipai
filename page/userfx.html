@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="main-header">
-    <h2>代理商管理</h2>
+    <h2>账户管理</h2>
     <em>对代理商账户进行增,删,改,查,赠送房卡</em>
 </div>
 <div class="main-content">
@@ -47,6 +47,21 @@
                             <th>
                                 级别
                             </th>
+                            <th>
+                                添加时间
+                            </th>
+                            <th>
+                                密码
+                            </th>
+                            <th>
+                                最后登陆时间
+                            </th>
+                            <th>
+                                是否管理员
+                            </th>
+                            <th>
+                                状态
+                            </th>                            
                             <th>
                                 备注
                             </th>
@@ -114,8 +129,8 @@
 								<div class="form-group">
 									<label>性别</label>
                                     <select class="form-control" name='sex'>
-                                        <option value="0">男</option>
-                                        <option value="1">女</option>
+                                        <option value="1">男</option>
+                                        <option value="0">女</option>
                                     </select>
 								</div>					    		
 					    	</div>
@@ -141,7 +156,6 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-                    <span id="aerr" style="margin-right: 30px;"></span>
 					<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> 关闭</button>
 					<button type="button" class="btn btn-custom-primary" id='formsubmit' data-loading-text="提交中..."><i class="fa fa-check-circle"></i> 保存</button>
 				</div>
@@ -172,8 +186,23 @@
                     </form>
                 </div>
                 <div class="modal-footer">
+                    <span id="aerr1" style="margin-right: 30px;color: red;"></span>
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> 关闭</button>
                     <button type="button" class="btn btn-custom-primary" id="cz-sbumit" data-loading-text="提交中..."><i class="fa fa-check-circle"></i> 赠送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="my_alert" tabindex="-1" role="dialog" aria-labelledby="my_alertLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p style='color: red;'>是否执行停用代理商操作？</p>
+                </div>
+                <div class="modal-footer">
+                    <span id="aerr2" style="margin-right: 30px;color: red;"></span>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times-circle"></i> 否</button>
+                    <button type="button" class="btn btn-custom-primary" id="tingyong-sbumit" data-loading-text="提交中..."><i class="fa fa-check-circle"></i> 是</button>
                 </div>
             </div>
         </div>
@@ -182,14 +211,16 @@
 <script src="assets/js/plugins/parsley-validation/parsley.min.js"></script>
 <script src="assets/js/plugins/jquery.form/jquery.form.js"></script>
 <script type="text/javascript">
-    //document.domain='http://bei546720475.oicp.net/web/partnerList';
     var url=p_url.agent;
+    var stopid={};
     var fn={
         give:function(d){
+            $('#aerr1').html('');
             $('#cz-form').initForm({jsonValue:{name:d}});
             $('#my_cz').modal('show');
         },
         edit:function(d){
+            $('#aerr').html('');
             var table = $('#simpledatatable').DataTable();
             var rows=table.rows().data();
             var cur={};
@@ -202,28 +233,41 @@
             $('#advanced-form').find('input[name=name]').attr('readonly',true);
             $('#advanced-form').initForm({jsonValue:cur});
             $('#myModal').modal('show');
-        },
-        stop:function(d){
-            $.post(url.url_4,{name:d},function(data){
-                $('#simpledatatable').DataTable().ajax.reload();
-            });
+        },//停用/启用代理商
+        stop:function(d,type){
+            $('#my_alert').modal('show');
+            $('#aerr2').html('');
+            stopid={name:d,type:type};
         }
     }
-    $(function () {
-        $.extend($.gritter.options, {
-            class_name: 'gritter-light',
-            fade_in_speed: 100,
-            fade_out_speed: 100,
-            position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
-            time: 1500,
-        });
 
-        $('#seach-btn').click( function() {
-            $.gritter.add({
-                title: 'Sticky Alert!',
-                text: 'You have <a href="#">new support message</a>. Click (x) on the top right to close this message.',
-                sticky: true
+    $(function () {
+        // $.extend($.gritter.options, {
+        //     class_name: 'gritter-light',
+        //     fade_in_speed: 100,
+        //     fade_out_speed: 100,
+        //     position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
+        //     time: 1500,
+        // });
+        // $.gritter.add({
+        //     title: 'Sticky Alert!',
+        //     text: 'You have <a href="#">new support message</a>. Click (x) on the top right to close this message.',
+        //     sticky: true
+        // });
+
+        $('#tingyong-sbumit').click(function(){
+            $.post(url.url_4,stopid,function(data){
+                if(data.success){
+                    $('#simpledatatable').DataTable().ajax.reload();
+                    $('#my_alert').modal('hide');
+                }else{
+                    $('#aerr2').html(data.msg);
+                }
             });
+        });
+        //查询数据
+        $('#seach-btn').click( function() {
+            $('#aerr').html('');
             var btn = $(this);
             var seachText=$('#seachText').val();
             btn.button('loading');
@@ -233,13 +277,12 @@
                 btn.button('reset');
             });
         });
-        //房卡数,上级代理,代理级别,添加时间,代理姓名,性别,代理手机号,最后登陆时间,是否管理员,状态,备注
+        //表格初始化
         $('#simpledatatable').dataTable({
             "processing": true,
             //"serverSide": true,
             "ajax": {
-                "url":url.url_1,
-                //"dataType": "jsonp"
+                "url":url.url_1
             },
             columns: [
                 { 
@@ -260,9 +303,29 @@
                     }
                 },
                 { data: "cardNum" },   
-                { data: "sex" },  
+                { data: "sex",render: function ( data, type, row ) {
+                    if(data=='1')
+                        return'男'
+                    else
+                        return '女'
+                }},  
                 { data: "mobile" },
                 { data: "grade" },   
+                { data: "addTime" },   
+                { data: "password" },   
+                { data: "lastLoginTime" },   
+                { data: "isAdmin" ,render: function ( data, type, row ) {
+                    if(data=='1')
+                        return'是'
+                    else
+                        return '否'
+                }},   
+                { data: "state" ,render: function ( data, type, row ) {
+                    if(data=='1')
+                        return'可用'
+                    else
+                        return '不可用'
+                }},   
                 { data: "remark" }
             ],
              dom: 'Bfrtip',
@@ -308,26 +371,18 @@
                 url: url.url_2,                 //默认是form的action
                 type: 'POST',               //默认是form的method（get or post）
                 dataType: "json",           //html(默认), xml, script, json...接受服务端返回的类型
-                //clearForm: true,          //成功提交后，清除所有表单元素的值
-                //resetForm: true,          //成功提交后，重置所有表单元素的值
-                //target: '#output',          //把服务器返回的内容放入id为output的元素中
-                //timeout: 3000,               //限制请求的时间，当请求大于3秒后，跳出请求
-                
-                //提交前的回调函数
-                beforeSubmit: function(arr,$form,options){
-                    //formData: 数组对象，提交表单时，Form插件会以Ajax方式自动提交这些数据，格式如：[{name:user,value:val },{name:pwd,value:pwd}]
-                    //jqForm:   jQuery对象，封装了表单的元素
-                    //options:  options对象
-                    //比如可以再表单提交前进行表单验证
-                },
                 success: function(data,status,xhr,$form){
-                    $('#myModal').modal('hide');
+                    if(data.success){
+                        $('#simpledatatable').DataTable().ajax.reload()
+                        $('#myModal').modal('hide');
+                    }else{
+                        $('#aerr').html(data.msg);
+                    }
                 },
                 error: function(xhr, status, error, $form){
-                    $('#aerr').html(error);
+                    $('#aerr').html('错误!'+error);
                 },
                 complete: function(xhr, status, $form){
-                    $('#simpledatatable').DataTable().ajax.reload()
                     btn.button('reset');
                 }
             });
@@ -348,14 +403,17 @@
                 url: url.url_3,
                 type: 'POST',
                 dataType: "json",
-                beforeSubmit: function(arr,$form,options){
-
-                },
                 success: function(data,status,xhr,$form){
-                    $('#my_cz').modal('hide');
+                    if(data.success){
+                        $('#simpledatatable').DataTable().ajax.reload()
+                        $('#my_cz').modal('hide');
+                    }else{
+                        $('#aerr1').html(data.msg);
+                    }
+                    
                 },
                 error: function(xhr, status, error, $form){
-                    
+                    $('#aerr1').html('错误!'+error);
                 },
                 complete: function(xhr, status, $form){
                     $('#simpledatatable').DataTable().ajax.reload()
@@ -364,7 +422,7 @@
             });
             return false;
         });
-
+        //----------------------
 		$('#myModal').on('hide.bs.modal', function () {
             $("#advanced-form").resetForm();
 			return true;

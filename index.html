@@ -96,8 +96,11 @@
 									<a href="#main" data-url='main'><i class="fa fa-dashboard fa-fw"></i><span class="text">基本信息</span></a>
 								</li>
 								<li>
-									<a href="#onlinefx" data-url='onlinefx'><i class="fa fa-users"></i><span class="text">代理商管理</span></a>
-								</li>	
+									<a href="#userfx" data-url='userfx'><i class="fa fa-users"></i><span class="text">账户管理</span></a>
+								</li>
+								<li>
+									<a href="#partnergx" data-url='partnergx'><i class="fa fa-users"></i><span class="text">代理商管理</span></a>
+								</li>								
 								<li>
 									<a href="#game-user" data-url='game-user'><i class="fa fa-credit-card"></i><span class="text">发卡操作</span></a>
 								</li>
@@ -177,12 +180,17 @@
 	<script src="assets/js/jquery.gritter.min.js"></script>
 	<script type="text/javascript">
 		window.p_url={
-			//代理商管理
+			//账户管理
 			agent:{
 				url_1:'data1.json',//数据表格url
 				url_2:'12121/ADS',//表单操作url
 				url_3:'dddd/aaa',//赠送房卡url
 				url_4:'dadd/bbb'//启用停用url
+			},
+			//代理商管理
+			partner:{
+				url_1:'data1.json',//数据表格url
+				url_3:'12121/ADS',//赠送房卡url
 			}
 		}
 		$(function(){
