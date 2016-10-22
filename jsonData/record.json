@@ -1,0 +1,13 @@
+{
+	"data":[
+		{
+			"salerId":"售卡人",
+			"clientId":"收卡人",
+			"clientType":"收卡人类型",
+			"cardNum":"12",
+			"clientCardNumRemain":"售后对方数量",
+			"salerCardNumRemain":"售后自己数量",
+			"saleTime":"2016-08-09 12:25:55"
+		}
+	]
+}

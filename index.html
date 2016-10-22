@@ -102,12 +102,13 @@
 									<a href="#partnergx" data-url='partnergx'><i class="fa fa-users"></i><span class="text">代理商管理</span></a>
 								</li>								
 								<li>
-									<a href="#game-user" data-url='game-user'><i class="fa fa-credit-card"></i><span class="text">发卡操作</span></a>
+									<a href="#hairpinfk" data-url='hairpinfk'><i class="fa fa-credit-card"></i><span class="text">发卡操作</span></a>
 								</li>
 
 								<li>
-									<a href="#gradexj" data-url='gradexj'><i class="fa fa-credit-card"></i><span class="text">发卡记录</span></a>
-								</li>	
+									<a href="#recordfk" data-url='recordfk'><i class="fa fa-credit-card"></i><span class="text">发卡记录</span></a>
+								</li>
+
 								<li>
 									<a href="#incomesd" data-url='incomesd'><i class="glyphicon glyphicon-dashboard fa-fw"></i><span class="text">登录日志</span></a>
 								</li>												
@@ -175,23 +176,30 @@
 	<script src="assets/js/mobiscroll/js/mobiscroll.js"></script>
 
 	<script type="text/javascript" src="assets/js/datatable/jquery.dataTables.js"></script>
-	<script src="assets/js/select2.js"></script>
 	<script src="assets/js/bootstrap-switch.js"></script>
 	<script src="assets/js/jquery.gritter.min.js"></script>
 	<script type="text/javascript">
 		window.p_url={
 			//账户管理
 			agent:{
-				url_1:'data1.json',//数据表格url
+				url_1:'jsonData/data1.json',//数据表格url
 				url_2:'12121/ADS',//表单操作url
 				url_3:'dddd/aaa',//赠送房卡url
 				url_4:'dadd/bbb'//启用停用url
 			},
 			//代理商管理
 			partner:{
-				url_1:'data1.json',//数据表格url
+				url_1:'jsonData/data1.json',//数据表格url
 				url_3:'12121/ADS',//赠送房卡url
-			}
+			},
+			//发卡操作
+			hairpin:{
+				url_1:'jsonData/userinfo.json',//获取游戏账户信息url
+				url_2:'12121/ADS',//给游戏用户充值url
+			},
+			record:{
+				url_1:'jsonData/record.json'
+			}		
 		}
 		$(function(){
 			$.scParameter={
