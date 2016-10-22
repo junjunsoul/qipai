@@ -12,95 +12,31 @@
 </div>
 <div class="main-content">
     <div class="widget">
+        <div class="widget-header">
+            <h3><i class="fa fa-edit"></i> 筛选</h3>
+        </div>
         <div class="widget-content">
-            <div class="row more-seach">
-                <div class="col-xs-4">
-                    <div class="input-group btn-group datesel" style="max-width: 250px;">
-                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <button type="button" class="btn btn-default btn-md" 
-                        style="width: 100%;"><span></span>
-                        </button>
-                        <ul class="dropdown-menu" style="width: 100%;">
-                            <li style="text-align: center;">
-                                <span class="badge" data-tr="0">今日</span>
-                                <span class="badge" data-tr="1">昨日</span>
-                                <span class="badge" data-tr="7">近7日</span>
-                                <span class="badge" data-tr="30">近30日</span>
-                                <span class="badge" data-tr="90">全部</span>
-                            </li>
-                            <li>
-                                <div class="form-group">
-                                    <span class="input-icon icon-right">
-                                        <input type="text" class="form-control" readonly placeholder="筛选日期">
-                                        <i class="fa fa-calendar"></i>
-                                    </span>
-                                </div>
-                            </li>
-                            <li style="text-align:right">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-edit"></i>取消</button>
-                            </li>
-                        </ul>
-                    </div>
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <select class="form-control" id="gametype" style="width: 150px;">
+                        <option value="修水麻将">修水麻将</option>
+                    </select>
                 </div>
-                <div class="col-xs-8 text-right">
-                    <div class="btn-group multi-c">
-                        <button type="button" class="btn btn-default btn-md ck"><i class="fa fa-glass"></i> 筛选</button>
-                        <button type="button" class="btn btn-default btn-md ck" style="margin-left:0"><span class="caret"></span></button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <div class="title">
-                                    <label>渠道：
-                                        <input type="checkbox" class="ckcheked" data-size="mini">
-                                    </label>
-                                    <label>不筛选</label>
-                                </div>
-
-                                <div class="multi-content">
-                                    <select id="multiselect6" multiple="multiple" style="width:100%">
-                                        <optgroup label="大中华">
-                                            <option value="analysis">渠道5-</option>
-                                            <option value="algebra">渠道1*s</option>
-                                            <option value="discrete">渠道1-899</option>
-                                            <option value="numerical">渠道231 </option>
-                                            <option value="probability">渠道1322</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="title">
-                                    <label>区服：
-                                        <input type="checkbox" class="ckcheked" data-size="mini">
-                                    </label>
-                                    <label>不筛选</label>
-                                </div>
-
-                                <div class="multi-content">
-                                    <select id="multiselect7" multiple="multiple" style="width:100%">
-                                        <optgroup label="华南二区">
-                                            <option value="analysis">二区-</option>
-                                            <option value="algebra">二区*s</option>
-                                            <option value="discrete">二区-899</option>
-                                            <option value="numerical">二区 </option>
-                                            <option value="probability">二区</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </li>
-                            <li style="text-align:right;border:0;">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-check-circle"></i>确认</button>
-                                <button type="button" class="btn btn-default btn-sm cancel"><i class="fa fa-edit"></i>取消</button>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="form-group">
+                    <span class="input-icon icon-right">
+                        <input type="text" id='rangeTime' class="form-control" readonly placeholder="筛选日期">
+                        <i class="fa fa-calendar"></i>
+                    </span>
                 </div>
-            </div>
+                <button type="submit" id='seach-btn' data-loading-text="查询中..." class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i> 查询
+                </button>
+            </form>
         </div>
     </div>
     <div class="widget">
         <div class="widget-header">
-            <h3><i class="glyphicon glyphicon-th-list"></i>基本信息</h3>
+            <h3><i class="glyphicon glyphicon-th-list"></i>发卡记录</h3>
         </div>
         <div class="widget-content">
             <div class="flip-scroll">
@@ -108,34 +44,29 @@
                     <thead class="flip-content bordered-palegreen">                  
                         <tr>
                             <th>
-                                房卡余额
+                                售卡人
                             </th>
                             <th>
-                                本月购买
+                                收卡人
                             </th>
                             <th>
-                                本月售玩家
+                                收卡人类型
                             </th>
                             <th>
-                                本月售代理
+                                发卡数量
                             </th>
                             <th>
-                                上月购买
+                                售后对方数量
                             </th>
                             <th>
-                                上月售玩家
+                                售后自己数量
                             </th>
                             <th>
-                                上月售代理
-                            </th>
-                            <th>
-                                累积购买
-                            </th>
-                            <th>
-                                累积售出
+                                发卡时间
                             </th>
                         </tr>
                     </thead>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
@@ -143,53 +74,45 @@
 </div><!-- /main-content -->
 <script type="text/javascript">
     $(function () {
+        var url=p_url.record;
+        $('#seach-btn').click(function(){
+
+            var btn = $(this);
+            var rangeTime=$('#rangeTime').val();
+            var gametype=$('#gametype').val();
+
+            btn.button('loading');
+            var table =$('#simpledatatable').DataTable();
+            table.ajax.url(url.url_1+"?rangeTime="+rangeTime+'&gametype='+gametype);
+            table.ajax.reload(function(j){
+                btn.button('reset');
+            });
+        });
         $('#simpledatatable').dataTable({
-            ajax:'data.json',
+            ajax:url.url_1,
             columns: [
-                { data: "ct1", render: function ( data, type, row ) {
-                    return data;
-                    }
-                },
-                { data: "ct2" },
-                { data: "ct3" },
-                { data: "ct4" },
-                { data: "ct5" },
-                { data: "ct6" },
-                { data: "ct7" },
-                { data: "ct8" },
-                { data: "ct9" }
+                { data: "salerId"},
+                { data: "clientId" },
+                { data: "clientType" },
+                { data: "cardNum" },
+                { data: "clientCardNumRemain" },
+                { data: "salerCardNumRemain" },
+                { data: "saleTime" }
             ],
              dom: 'Bfrtip',
              buttons: 
-             [
+             [       
                 {
                     extend: 'copy',
                     text: '复制'
                 },
-
                 'excel',
-                {
-                    extend: 'print',
-                    text: '打印'
-                },
-                {
-                    extend: 'colvis',
-                    text: '设置列'
-                },          
                 'pageLength'
              ],
             "oLanguage": $.scParameter.datatable_lang
         });
 
-        $('.datesel').selDate({
-            e_click:function(item){}
-        });
-
-        $('.multi-c').multi_c();
-
-        $('#multiselect6,#multiselect7').select2();
-
-        $('#rangeTime').mobiscroll().calendar({
+        $('#rangeTime').mobiscroll().range({
             theme:$.scParameter.theme,
             lang: $.scParameter.lang,
             display: $.scParameter.display,
