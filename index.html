@@ -17,8 +17,6 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap.css"/>
 
-	<!-- 主题选择 -->
-	<link href="style-switcher/assets/css/style-switcher.css" rel="stylesheet" type="text/css">
 
 	<link href="assets/js/mobiscroll/css/mobiscroll.css" rel="stylesheet" type="text/css">
 
@@ -110,7 +108,7 @@
 								</li>
 
 								<li>
-									<a href="#incomesd" data-url='incomesd'><i class="glyphicon glyphicon-dashboard fa-fw"></i><span class="text">登录日志</span></a>
+									<a href="#loginlog" data-url='loginlog'><i class="glyphicon glyphicon-dashboard fa-fw"></i><span class="text">登录日志</span></a>
 								</li>												
 							</ul>
 						</nav><!-- /main-nav -->
@@ -141,42 +139,17 @@
 	</footer>
 	<!-- END FOOTER -->
 
-	<!-- STYLE SWITCHER -->
-	<div class="del-style-switcher">
-		<div class="del-switcher-toggle toggle-hide"></div>
-		<form>
-			<section class="del-section del-section-skin">
-				<h5 class="del-switcher-header">选择主题:</h5>
-				<ul>
-					<li><a href="#" title="Slate Gray" class="switch-skin slategray" data-skin="assets/css/skins/slategray.css">Slate Gray</a></li>
-					<li><a href="#" title="Dark Blue" class="switch-skin darkblue" data-skin="assets/css/skins/darkblue.css">Dark Blue</a></li>
-					<li><a href="#" title="Dark Brown" class="switch-skin darkbrown" data-skin="assets/css/skins/darkbrown.css">Dark Brown</a></li>
-					<li><a href="#" title="Light Green" class="switch-skin lightgreen" data-skin="assets/css/skins/lightgreen.css">Light Green</a></li>
-					<li><a href="#" title="Orange" class="switch-skin orange" data-skin="assets/css/skins/orange.css">Orange</a></li>
-					<li><a href="#" title="Red" class="switch-skin red" data-skin="assets/css/skins/red.css">Red</a></li>
-					<li><a href="#" title="Teal" class="switch-skin teal" data-skin="assets/css/skins/teal.css">Teal</a></li>
-					<li><a href="#" title="Yellow" class="switch-skin yellow" data-skin="assets/css/skins/yellow.css">Yellow</a></li>
-				</ul>
-			</section>
-			
-			<p><a href="#" title="Reset Style" class="del-reset-style">重置主题</a></p>
-		</form>
-	</div>
-	<!-- END STYLE SWITCHER -->
-
 	<!-- Javascript -->
 	<script src="assets/js/jquery-2.1.0.min.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
 	<script src="assets/js/modernizr.js"></script><!-- 兼容css3,html5 -->
 	<script src="assets/js/common.js"></script>
 
-	<script src="style-switcher/assets/js/deliswitch.js"></script><!-- 主题切换 -->
 
 	<script src="assets/js/jquery.ba-hashchange.min.js"></script><!-- hash值改变事件 -->
 	<script src="assets/js/mobiscroll/js/mobiscroll.js"></script>
 
 	<script type="text/javascript" src="assets/js/datatable/jquery.dataTables.js"></script>
-	<script src="assets/js/bootstrap-switch.js"></script>
 	<script src="assets/js/jquery.gritter.min.js"></script>
 	<script type="text/javascript">
 		window.p_url={
@@ -196,7 +169,7 @@
 			hairpin:{
 				url_1:'jsonData/userinfo.json',//获取游戏账户信息url
 				url_2:'12121/ADS',//给游戏用户充值url
-			},
+			},//发卡查询
 			record:{
 				url_1:'jsonData/record.json'
 			}		

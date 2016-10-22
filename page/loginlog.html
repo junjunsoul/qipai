@@ -1,0 +1,121 @@
+<div class="row">
+    <div class="col-lg-4 ">
+        <ul class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="#">主页</a></li> <li class="active">登录日志</li>
+        </ul>
+    </div>
+</div>
+<div class="main-header">
+    <h2>登录日志</h2>
+    <em>对登录日志进行查询</em>
+</div>
+<div class="main-content">
+    <div class="widget">
+        <div class="widget-header">
+            <h3><i class="fa fa-edit"></i> 筛选</h3>
+        </div>
+        <div class="widget-content">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <select class="form-control" id="gametype" style="width: 150px;">
+                        <option value="修水麻将">修水麻将</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span class="input-icon icon-right">
+                        <input type="text" id='rangeTime' class="form-control" readonly placeholder="筛选日期">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+                <button type="submit" id='seach-btn' data-loading-text="查询中..." class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i> 查询
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="widget-header">
+            <h3><i class="glyphicon glyphicon-th-list"></i>发卡记录</h3>
+        </div>
+        <div class="widget-content">
+            <div class="flip-scroll">
+                <table class="table table-bordered table-striped table-condensed flip-content" id="simpledatatable">
+                    <thead class="flip-content bordered-palegreen">                  
+                        <tr>
+                            <th>
+                                售卡人
+                            </th>
+                            <th>
+                                收卡人
+                            </th>
+                            <th>
+                                收卡人类型
+                            </th>
+                            <th>
+                                发卡数量
+                            </th>
+                            <th>
+                                售后对方数量
+                            </th>
+                            <th>
+                                售后自己数量
+                            </th>
+                            <th>
+                                发卡时间
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div><!-- /main-content -->
+<script type="text/javascript">
+    $(function () {
+        var url=p_url.record;
+        $('#seach-btn').click(function(){
+
+            var btn = $(this);
+            var rangeTime=$('#rangeTime').val();
+            var gametype=$('#gametype').val();
+
+            btn.button('loading');
+            var table =$('#simpledatatable').DataTable();
+            table.ajax.url(url.url_1+"?rangeTime="+rangeTime+'&gametype='+gametype);
+            table.ajax.reload(function(j){
+                btn.button('reset');
+            });
+        });
+        $('#simpledatatable').dataTable({
+            ajax:url.url_1,
+            columns: [
+                { data: "salerId"},
+                { data: "clientId" },
+                { data: "clientType" },
+                { data: "cardNum" },
+                { data: "clientCardNumRemain" },
+                { data: "salerCardNumRemain" },
+                { data: "saleTime" }
+            ],
+             dom: 'Bfrtip',
+             buttons: 
+             [       
+                {
+                    extend: 'copy',
+                    text: '复制'
+                },
+                'excel',
+                'pageLength'
+             ],
+            "oLanguage": $.scParameter.datatable_lang
+        });
+
+        $('#rangeTime').mobiscroll().range({
+            theme:$.scParameter.theme,
+            lang: $.scParameter.lang,
+            display: $.scParameter.display,
+            mode:$.scParameter.mode
+        });
+    });   
+</script>
