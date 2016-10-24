@@ -171,10 +171,11 @@
                 </div>
                 <div class="modal-body">
                     <form id="cz-form" data-parsley-validate novalidate>
+                        <input type="hidden" name="clientType" value="1">
                         <div class="row">
                             <div class="form-group">
                                 <label>账户</label>
-                                <input type="text" name='name' class="form-control" readonly>
+                                <input type="text" name='clientId' class="form-control" readonly>
                             </div>  
                         </div>
                         <div class="row">
@@ -197,7 +198,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p style='color: red;'>是否执行停用代理商操作？</p>
+                    <p style='color: red;'>是否执行修改代理商状态操作？</p>
                 </div>
                 <div class="modal-footer">
                     <span id="aerr2" style="margin-right: 30px;color: red;"></span>
@@ -216,7 +217,7 @@
     var fn={
         give:function(d){
             $('#aerr1').html('');
-            $('#cz-form').initForm({jsonValue:{name:d}});
+            $('#cz-form').initForm({jsonValue:{clientId:d}});
             $('#my_cz').modal('show');
         },
         edit:function(d){
@@ -237,7 +238,7 @@
         stop:function(d,type){
             $('#my_alert').modal('show');
             $('#aerr2').html('');
-            stopid={name:d,type:type};
+            stopid={name:d,edittype:type};
         }
     }
 
@@ -257,7 +258,7 @@
 
         $('#tingyong-sbumit').click(function(){
             $.post(url.url_4,stopid,function(data){
-                if(data.success){
+                if(data.state){
                     $('#simpledatatable').DataTable().ajax.reload();
                     $('#my_alert').modal('hide');
                 }else{
@@ -372,7 +373,7 @@
                 type: 'POST',               //默认是form的method（get or post）
                 dataType: "json",           //html(默认), xml, script, json...接受服务端返回的类型
                 success: function(data,status,xhr,$form){
-                    if(data.success){
+                    if(data.state){
                         $('#simpledatatable').DataTable().ajax.reload()
                         $('#myModal').modal('hide');
                     }else{
@@ -404,13 +405,12 @@
                 type: 'POST',
                 dataType: "json",
                 success: function(data,status,xhr,$form){
-                    if(data.success){
+                    if(data.state){
                         $('#simpledatatable').DataTable().ajax.reload()
                         $('#my_cz').modal('hide');
                     }else{
                         $('#aerr1').html(data.msg);
                     }
-                    
                 },
                 error: function(xhr, status, error, $form){
                     $('#aerr1').html('错误!'+error);

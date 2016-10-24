@@ -102,21 +102,7 @@
         }
     }
     $(function () {
-        $.extend($.gritter.options, {
-            class_name: 'gritter-light',
-            fade_in_speed: 100,
-            fade_out_speed: 100,
-            position: 'top-right', // possibilities: bottom-left, bottom-right, top-left, top-right
-            time: 1500,
-        });
-
         $('#seach-btn').click( function() {
-            $.gritter.add({
-                title: 'Sticky Alert!',
-                text: 'You have <a href="#">new support message</a>. Click (x) on the top right to close this message.',
-                sticky: true
-            });
-
             var btn = $(this);
             var seachText=$('#seachText').val();
             btn.button('loading');
