@@ -45,7 +45,7 @@
 						<input type="checkbox" id="checkbox1">
 						<label for="checkbox1" id="cbox">记住密码</label>
 					</div>
-					<button class="btn btn-custom-primary btn-lg btn-block btn-login" id="btn-sbumit" data-loading-text="登录中...">
+					<button type='button' class="btn btn-custom-primary btn-lg btn-block btn-login" id="btn-sbumit" data-loading-text="登录中...">
 					<i class="fa fa-arrow-circle-o-right"></i> 登录</button>
 				</form>
 			</div>
@@ -69,8 +69,6 @@
             $('.bs-callout-warning').toggleClass('hidden', ok);
         })
         .on('form:submit', function() {
-            var btn = $('#cz-sbumit');
-            btn.button('loading');
             $('#cz-form').ajaxSubmit({
                 url: '123',
                 type: 'POST',
@@ -86,10 +84,10 @@
                     }
                 },
                 error: function(xhr, status, error, $form){
-                    alert(error);
+                    alert('请输入正确信息！');
                 },
                 complete: function(xhr, status, $form){
-                    btn.button('reset');
+
                 }
             });
             return false;
