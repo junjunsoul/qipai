@@ -22,16 +22,13 @@
 	<div class="wrapper full-page-wrapper page-login text-center">
 
 		<div class="inner-page">
-		
-			<div class="logo"><a href="index.html"><img src="assets/img/kingadmin-logo.png" alt="" /></a></div>
-
 			<div class="login-box center-block">
-				<form class="form-horizontal" role="form">
+				<form class="form-horizontal" id="cz-form" role="form" data-parsley-validate novalidate>
 					<p class="title">输入您的用户名和密码</p>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="input-group">
-								<input type="text" placeholder="用户名" class="form-control">
+								<input type="text" id='username' name="username" placeholder="用户名" required class="form-control">
 								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 							</div>
 						</div>
@@ -39,22 +36,18 @@
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="input-group">
-								<input type="password" placeholder="密码" class="form-control">
+								<input type="password" placeholder="密码" required class="form-control">
 								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 							</div>
 						</div>
 					</div>
 					<div class="simple-checkbox">
 						<input type="checkbox" id="checkbox1">
-						<label for="checkbox1">记住密码</label>
+						<label for="checkbox1" id="cbox">记住密码</label>
 					</div>
-					<button class="btn btn-custom-primary btn-lg btn-block btn-login"><i class="fa fa-arrow-circle-o-right"></i> 登录</button>
+					<button class="btn btn-custom-primary btn-lg btn-block btn-login" id="btn-sbumit" data-loading-text="登录中...">
+					<i class="fa fa-arrow-circle-o-right"></i> 登录</button>
 				</form>
-				
-				<div class="links">
-					<p><a href="#">忘记密码?</a></p>
-					<p><a href="page-register.html">注册</a></p>
-				</div>
 			</div>
 		</div>
 		<div class="push-sticky-footer"></div>
@@ -64,8 +57,47 @@
 
 	<!-- Javascript -->
 	<script src="assets/js/jquery-2.1.0.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/modernizr.js"></script>
+	<script src="assets/js/plugins/parsley-validation/parsley.min.js"></script>
+	<script src="assets/js/plugins/jquery.form/jquery.form.js"></script>
+	<script src="assets/js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+	$(function(){
+        //赠送充值
+        $('#cz-form').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-warning').toggleClass('hidden', ok);
+        })
+        .on('form:submit', function() {
+            var btn = $('#cz-sbumit');
+            btn.button('loading');
+            $('#cz-form').ajaxSubmit({
+                url: '123',
+                type: 'POST',
+                dataType: "json",
+                success: function(data,status,xhr,$form){
+                    if(!data.state){
+                        alert(data.msg)
+                    }else{
+                    	if($('#cbox').is(':checked'))
+                    		$.cookie('username', $("#username").val() , { path: '/', expires: 10, secure: true });
 
+                    	location.href='/qipai/#main';
+                    }
+                },
+                error: function(xhr, status, error, $form){
+                    alert(error);
+                },
+                complete: function(xhr, status, $form){
+                    btn.button('reset');
+                }
+            });
+            return false;
+        });
+        $('#btn-sbumit').click(function(){
+        	$('#cz-form').submit();
+        });
+	});
+	</script>
 </body>
 </html>
